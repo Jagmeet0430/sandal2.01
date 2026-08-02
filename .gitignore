@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+.next/
+
+# Logs
+*.log
+*.err
+
+# Chrome audit profiles
+.audit-chrome-profile/
+.audit-chrome-profile-*/
+.audit-edge-profile/
+
+# OS
+.DS_Store
+Thumbs.db

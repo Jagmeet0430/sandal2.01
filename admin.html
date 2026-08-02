@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ApexMind Admin | CMS Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="admin-body">
+    <aside class="admin-sidebar">
+      <a class="brand" href="index.html"><span class="brand-mark">A</span><span>ApexMind</span></a>
+      <nav aria-label="Admin navigation">
+        <a class="active" href="#dashboard">Dashboard</a>
+        <a href="#leads">Leads</a>
+        <a href="#projects">Projects</a>
+        <a href="#cms">Pages</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#team">Team Members</a>
+        <a href="#careers">Career Jobs</a>
+        <a href="#media">Media</a>
+        <a href="#seo">SEO</a>
+        <a href="#settings">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div>
+          <span>Admin Panel</span>
+          <h1>Command Center</h1>
+        </div>
+        <div class="admin-actions">
+          <button class="icon-btn" type="button" aria-label="Search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.35-4.35m1.35-5.15a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0Z" /></svg>
+          </button>
+          <a class="secondary-btn" href="index.html">View Site</a>
+          <button class="primary-btn" type="button">New Page</button>
+        </div>
+      </header>
+
+      <section class="admin-metrics" id="dashboard">
+        <article><span>Qualified Leads</span><strong>328</strong><small>+18.4%</small></article>
+        <article><span>Active Projects</span><strong>42</strong><small>+6 this month</small></article>
+        <article><span>Contact Requests</span><strong>91</strong><small>24 urgent</small></article>
+        <article><span>Revenue Pipeline</span><strong>$4.8M</strong><small>weighted forecast</small></article>
+      </section>
+
+      <section class="admin-grid">
+        <article class="admin-panel large" id="analytics">
+          <div class="panel-head">
+            <div>
+              <span>Analytics</span>
+              <h2>Website performance</h2>
+            </div>
+            <button type="button">Export</button>
+          </div>
+          <div class="admin-chart" aria-label="Analytics chart">
+            <span style="height: 46%"></span><span style="height: 64%"></span>
+            <span style="height: 52%"></span><span style="height: 78%"></span>
+            <span style="height: 70%"></span><span style="height: 91%"></span>
+            <span style="height: 84%"></span>
+          </div>
+        </article>
+
+        <article class="admin-panel" id="leads">
+          <div class="panel-head">
+            <div>
+              <span>Leads</span>
+              <h2>Priority requests</h2>
+            </div>
+          </div>
+          <div class="lead-list">
+            <div><b>Northstar Health</b><span>Healthcare AI platform</span><small>High intent</small></div>
+            <div><b>Finova Risk</b><span>LLM compliance review</span><small>Proposal sent</small></div>
+            <div><b>ClearDent Group</b><span>Imaging automation</span><small>Call booked</small></div>
+          </div>
+        </article>
+
+        <article class="admin-panel" id="projects">
+          <div class="panel-head">
+            <div>
+              <span>Projects</span>
+              <h2>Delivery status</h2>
+            </div>
+          </div>
+          <div class="project-list">
+            <div><span>AI Agent Platform</span><progress max="100" value="78"></progress></div>
+            <div><span>Dental Copilot</span><progress max="100" value="62"></progress></div>
+            <div><span>ERP Automation</span><progress max="100" value="44"></progress></div>
+          </div>
+        </article>
+
+        <article class="admin-panel wide" id="cms">
+          <div class="panel-head">
+            <div>
+              <span>CMS</span>
+              <h2>Content operations</h2>
+            </div>
+            <button type="button">Manage Menus</button>
+          </div>
+          <div class="cms-grid">
+            <span>Users</span><span>Blogs</span><span>Portfolio</span><span>Testimonials</span>
+            <span>Industries</span><span>Services</span><span>Newsletter</span><span>Invoices</span>
+            <span>Roles</span><span>Permissions</span><span>Live Chat</span><span>SEO</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="admin-anchor-grid" aria-label="Admin modules">
+        <article id="services"><span>Services</span><strong>22</strong><p>Capability pages, pricing notes, FAQs, and SEO snippets.</p></article>
+        <article id="portfolio"><span>Portfolio</span><strong>18</strong><p>Project cards, filters, media, case metrics, and approvals.</p></article>
+        <article id="case-studies"><span>Case Studies</span><strong>9</strong><p>Challenge, solution, stack, timeline, results, and ROI blocks.</p></article>
+        <article id="blogs"><span>Blogs</span><strong>64</strong><p>Featured posts, categories, authors, reading time, and newsletter links.</p></article>
+        <article id="team"><span>Team Members</span><strong>40</strong><p>Leadership profiles, delivery squads, photos, bios, and LinkedIn links.</p></article>
+        <article id="careers"><span>Career Jobs</span><strong>7</strong><p>Open roles, departments, locations, applications, and hiring stages.</p></article>
+        <article id="media"><span>Media</span><strong>312</strong><p>Images, videos, documents, logos, and Cloudinary asset metadata.</p></article>
+        <article id="seo"><span>SEO</span><strong>95</strong><p>Titles, descriptions, schema, canonical URLs, redirects, and sitemap status.</p></article>
+        <article id="settings"><span>Settings</span><strong>12</strong><p>Menus, roles, permissions, invoices, analytics, integrations, and billing.</p></article>
+      </section>
+    </main>
+  </body>
+</html>
