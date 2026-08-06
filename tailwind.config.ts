@@ -1,10 +1,12 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./lib/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/lib/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
@@ -27,25 +29,19 @@ const config: Config = {
           primary: "rgb(var(--color-primary) / <alpha-value>)",
           primaryDark: "rgb(var(--color-primary-dark) / <alpha-value>)",
           sky: "rgb(var(--color-sky) / <alpha-value>)",
+          footerMuted: "rgb(var(--color-footer-muted) / <alpha-value>)",
         },
       },
       boxShadow: {
-        soft: "0 18px 60px rgb(15 47 86 / 0.08)",
-        button: "0 14px 30px rgb(0 102 255 / 0.18)",
+        soft: "var(--shadow-soft)",
+        button: "var(--shadow-button)",
       },
       borderRadius: {
         brand: "0.75rem",
+        pill: "99px",
       },
       fontFamily: {
-        sans: [
-          "Inter",
-          "ui-sans-serif",
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
-          "Segoe UI",
-          "sans-serif",
-        ],
+        sans: ["var(--font-sans)"],
       },
     },
   },

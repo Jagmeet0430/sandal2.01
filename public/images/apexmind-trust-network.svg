@@ -1,0 +1,38 @@
+<svg width="520" height="360" viewBox="0 0 520 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 158) rotate(90) scale(156)">
+      <stop stop-color="#DBEAFE"/>
+      <stop offset="0.42" stop-color="#93C5FD" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line" x1="60" y1="170" x2="460" y2="170" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#2563EB" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#2563EB" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#2563EB" fill-opacity="0.08"/>
+    </pattern>
+  </defs>
+  <rect width="520" height="360" fill="white" fill-opacity="0"/>
+  <rect width="520" height="360" fill="url(#dots)"/>
+  <circle cx="260" cy="158" r="158" fill="url(#glow)"/>
+  <path d="M58 170C120 120 164 216 226 170C250 152 270 152 294 170C356 216 400 120 462 170" stroke="url(#line)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M92 226C150 194 198 250 246 224C262 215 278 215 294 224C342 250 390 194 448 226" stroke="#7DD3FC" stroke-opacity="0.28" stroke-width="2" stroke-linecap="round"/>
+  <path d="M94 114C152 146 198 90 246 116C262 125 278 125 294 116C342 90 388 146 446 114" stroke="#7DD3FC" stroke-opacity="0.22" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="260" cy="170" r="86" stroke="#2563EB" stroke-opacity="0.12"/>
+  <circle cx="260" cy="170" r="56" stroke="#38BDF8" stroke-opacity="0.22"/>
+  <circle cx="260" cy="170" r="20" fill="#2563EB" fill-opacity="0.14"/>
+  <circle cx="260" cy="170" r="7" fill="#2563EB"/>
+  <g>
+    <circle cx="170" cy="112" r="7" fill="#7DD3FC"/>
+    <circle cx="350" cy="112" r="7" fill="#7DD3FC"/>
+    <circle cx="170" cy="228" r="7" fill="#7DD3FC"/>
+    <circle cx="350" cy="228" r="7" fill="#7DD3FC"/>
+    <circle cx="260" cy="76" r="6" fill="#DBEAFE"/>
+    <circle cx="260" cy="264" r="6" fill="#DBEAFE"/>
+    <circle cx="98" cy="170" r="6" fill="#DBEAFE"/>
+    <circle cx="422" cy="170" r="6" fill="#DBEAFE"/>
+  </g>
+  <path d="M170 112L260 170L350 112M170 228L260 170L350 228M260 76V264M98 170H422" stroke="#2563EB" stroke-opacity="0.12" stroke-width="2"/>
+</svg>

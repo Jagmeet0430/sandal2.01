@@ -1,0 +1,552 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+  ARCHIVED
+}
+
+enum LeadStatus {
+  NEW
+  QUALIFIED
+  MEETING_SCHEDULED
+  PROPOSAL_SENT
+  NEGOTIATION
+  WON
+  LOST
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum ProjectStatus {
+  DISCOVERY
+  DESIGN
+  BUILD
+  REVIEW
+  LAUNCHED
+  PAUSED
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING
+  RESOLVED
+  CLOSED
+}
+
+enum AuditAction {
+  LOGIN
+  LOGOUT
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  EXPORT
+  PUBLISH
+  APPROVE
+  ASSIGN
+  SETTINGS_CHANGE
+  PERMISSION_CHANGE
+}
+
+model User {
+  id                String             @id @default(uuid()) @db.Uuid
+  name              String
+  email             String             @unique
+  emailVerifiedAt   DateTime?
+  passwordHash      String?
+  imageUrl          String?
+  title             String?
+  department        String?
+  twoFactorEnabled  Boolean            @default(false)
+  status            String             @default("active")
+  lastLoginAt       DateTime?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  deletedAt         DateTime?
+  roles             UserRole[]
+  sessions          Session[]
+  loginHistory      LoginHistory[]
+  devices           Device[]
+  assignedLeads     Lead[]             @relation("LeadOwner")
+  assignedProjects  Project[]          @relation("ProjectOwner")
+  auditLogs         AuditLog[]
+  comments          Comment[]
+  tasks             Task[]
+  notifications     Notification[]
+}
+
+model Role {
+  id          String           @id @default(uuid()) @db.Uuid
+  name        String           @unique
+  description String?
+  isSystem    Boolean          @default(false)
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+  users       UserRole[]
+  permissions RolePermission[]
+}
+
+model Permission {
+  id          String           @id @default(uuid()) @db.Uuid
+  module      String
+  action      String
+  description String?
+  createdAt   DateTime         @default(now())
+  roles       RolePermission[]
+
+  @@unique([module, action])
+  @@index([module])
+}
+
+model UserRole {
+  userId    String   @db.Uuid
+  roleId    String   @db.Uuid
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role      Role     @relation(fields: [roleId], references: [id], onDelete: Cascade)
+
+  @@id([userId, roleId])
+}
+
+model RolePermission {
+  roleId       String     @db.Uuid
+  permissionId String     @db.Uuid
+  allowed      Boolean    @default(true)
+  createdAt    DateTime   @default(now())
+  role         Role       @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  permission   Permission @relation(fields: [permissionId], references: [id], onDelete: Cascade)
+
+  @@id([roleId, permissionId])
+}
+
+model Session {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @db.Uuid
+  refreshToken String   @unique
+  ipAddress    String?
+  userAgent    String?
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+  revokedAt    DateTime?
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Device {
+  id          String    @id @default(uuid()) @db.Uuid
+  userId      String    @db.Uuid
+  name        String
+  ipAddress   String?
+  userAgent   String?
+  trusted     Boolean   @default(false)
+  lastSeenAt  DateTime?
+  createdAt   DateTime  @default(now())
+  revokedAt   DateTime?
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model LoginHistory {
+  id        String   @id @default(uuid()) @db.Uuid
+  userId    String   @db.Uuid
+  ipAddress String?
+  userAgent String?
+  success   Boolean
+  reason    String?
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+}
+
+model Company {
+  id        String     @id @default(uuid()) @db.Uuid
+  name      String
+  website   String?
+  industry  String?
+  size      String?
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  deletedAt DateTime?
+  contacts  Contact[]
+  leads     Lead[]
+  deals     Deal[]
+  projects  Project[]
+  tickets   SupportTicket[]
+
+  @@index([name])
+}
+
+model Contact {
+  id        String    @id @default(uuid()) @db.Uuid
+  companyId String?   @db.Uuid
+  name      String
+  email     String
+  phone     String?
+  title     String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  company   Company?  @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  leads     Lead[]
+
+  @@unique([email])
+  @@index([companyId])
+}
+
+model Lead {
+  id          String        @id @default(uuid()) @db.Uuid
+  companyId   String?       @db.Uuid
+  contactId   String?       @db.Uuid
+  ownerId     String?       @db.Uuid
+  name        String
+  email       String
+  phone       String?
+  service     String?
+  source      String?
+  budget      String?
+  status      LeadStatus    @default(NEW)
+  priority    Priority      @default(MEDIUM)
+  followUpAt  DateTime?
+  notes       Note[]
+  activities  Activity[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+  company     Company?      @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  contact     Contact?      @relation(fields: [contactId], references: [id], onDelete: SetNull)
+  owner       User?         @relation("LeadOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+
+  @@index([status, priority])
+  @@index([ownerId])
+}
+
+model Deal {
+  id          String    @id @default(uuid()) @db.Uuid
+  companyId   String?   @db.Uuid
+  title       String
+  valueCents  Int
+  currency    String    @default("USD")
+  stage       String
+  probability Int       @default(0)
+  closeDate   DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  company     Company?  @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  invoices    Invoice[]
+
+  @@index([stage])
+}
+
+model Invoice {
+  id          String    @id @default(uuid()) @db.Uuid
+  dealId      String?   @db.Uuid
+  number      String    @unique
+  amountCents Int
+  currency    String    @default("USD")
+  status      String
+  dueAt       DateTime?
+  paidAt      DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deal        Deal?     @relation(fields: [dealId], references: [id], onDelete: SetNull)
+}
+
+model Project {
+  id          String        @id @default(uuid()) @db.Uuid
+  companyId   String?       @db.Uuid
+  ownerId     String?       @db.Uuid
+  name        String
+  description String?
+  budgetCents Int?
+  currency    String        @default("USD")
+  deadline    DateTime?
+  status      ProjectStatus @default(DISCOVERY)
+  priority    Priority      @default(MEDIUM)
+  progress    Int           @default(0)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+  company     Company?      @relation(fields: [companyId], references: [id], onDelete: SetNull)
+  owner       User?         @relation("ProjectOwner", fields: [ownerId], references: [id], onDelete: SetNull)
+  tasks       Task[]
+  milestones  Milestone[]
+  comments    Comment[]
+  media       MediaAsset[]
+
+  @@index([status, priority])
+}
+
+model Task {
+  id          String    @id @default(uuid()) @db.Uuid
+  projectId   String?   @db.Uuid
+  assigneeId  String?   @db.Uuid
+  title       String
+  description String?
+  status      String
+  priority    Priority  @default(MEDIUM)
+  dueAt       DateTime?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  project     Project?  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  assignee    User?     @relation(fields: [assigneeId], references: [id], onDelete: SetNull)
+}
+
+model Milestone {
+  id        String    @id @default(uuid()) @db.Uuid
+  projectId String    @db.Uuid
+  title     String
+  dueAt     DateTime?
+  completed Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  project   Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model CmsSection {
+  id          String        @id @default(uuid()) @db.Uuid
+  key         String        @unique
+  title       String
+  content     Json
+  status      PublishStatus @default(DRAFT)
+  scheduledAt DateTime?
+  publishedAt DateTime?
+  version     Int           @default(1)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+  versions    ContentVersion[]
+}
+
+model BlogPost {
+  id              String        @id @default(uuid()) @db.Uuid
+  title           String
+  slug            String        @unique
+  excerpt         String?
+  content         Json
+  status          PublishStatus @default(DRAFT)
+  metaTitle       String?
+  metaDescription String?
+  ogImageUrl      String?
+  readingMinutes  Int?
+  scheduledAt     DateTime?
+  publishedAt     DateTime?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  deletedAt       DateTime?
+  categories      BlogPostCategory[]
+  tags            BlogPostTag[]
+  comments        BlogComment[]
+}
+
+model BlogCategory {
+  id    String             @id @default(uuid()) @db.Uuid
+  name  String             @unique
+  slug  String             @unique
+  posts BlogPostCategory[]
+}
+
+model BlogTag {
+  id    String        @id @default(uuid()) @db.Uuid
+  name  String        @unique
+  slug  String        @unique
+  posts BlogPostTag[]
+}
+
+model BlogPostCategory {
+  postId     String       @db.Uuid
+  categoryId String       @db.Uuid
+  post       BlogPost     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category   BlogCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([postId, categoryId])
+}
+
+model BlogPostTag {
+  postId String   @db.Uuid
+  tagId  String   @db.Uuid
+  post   BlogPost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag    BlogTag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([postId, tagId])
+}
+
+model BlogComment {
+  id        String    @id @default(uuid()) @db.Uuid
+  postId    String    @db.Uuid
+  author    String
+  email     String
+  body      String
+  approved  Boolean   @default(false)
+  createdAt DateTime  @default(now())
+  deletedAt DateTime?
+  post      BlogPost  @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model ContentVersion {
+  id           String      @id @default(uuid()) @db.Uuid
+  cmsSectionId String?     @db.Uuid
+  entityType   String
+  entityId     String
+  version      Int
+  snapshot     Json
+  createdAt    DateTime    @default(now())
+  cmsSection   CmsSection? @relation(fields: [cmsSectionId], references: [id], onDelete: SetNull)
+}
+
+model MediaAsset {
+  id          String    @id @default(uuid()) @db.Uuid
+  projectId   String?   @db.Uuid
+  folderId    String?   @db.Uuid
+  name        String
+  url         String
+  mimeType    String
+  sizeBytes   Int
+  altText     String?
+  tags        String[]
+  provider    String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  project     Project?  @relation(fields: [projectId], references: [id], onDelete: SetNull)
+  folder      MediaFolder? @relation(fields: [folderId], references: [id], onDelete: SetNull)
+}
+
+model MediaFolder {
+  id        String       @id @default(uuid()) @db.Uuid
+  parentId  String?      @db.Uuid
+  name      String
+  createdAt DateTime     @default(now())
+  parent    MediaFolder? @relation("FolderTree", fields: [parentId], references: [id])
+  children  MediaFolder[] @relation("FolderTree")
+  assets    MediaAsset[]
+}
+
+model AiKnowledgeSource {
+  id        String   @id @default(uuid()) @db.Uuid
+  title     String
+  type      String
+  url       String?
+  content   String?
+  status    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AiPrompt {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String
+  content   String
+  version   Int      @default(1)
+  active    Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AiConversation {
+  id          String   @id @default(uuid()) @db.Uuid
+  visitorId   String?
+  email       String?
+  rating      Int?
+  handedOff   Boolean  @default(false)
+  transcript  Json
+  createdAt   DateTime @default(now())
+}
+
+model SupportTicket {
+  id        String       @id @default(uuid()) @db.Uuid
+  companyId String?      @db.Uuid
+  subject   String
+  body      String?
+  priority  Priority     @default(MEDIUM)
+  status    TicketStatus @default(OPEN)
+  slaDueAt   DateTime?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  deletedAt DateTime?
+  company   Company?     @relation(fields: [companyId], references: [id], onDelete: SetNull)
+}
+
+model CalendarEvent {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String
+  type        String
+  startsAt    DateTime
+  endsAt      DateTime?
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Note {
+  id        String   @id @default(uuid()) @db.Uuid
+  leadId    String?  @db.Uuid
+  body      String
+  createdAt DateTime @default(now())
+  lead      Lead?    @relation(fields: [leadId], references: [id], onDelete: Cascade)
+}
+
+model Activity {
+  id        String   @id @default(uuid()) @db.Uuid
+  leadId    String?  @db.Uuid
+  type      String
+  body      String
+  createdAt DateTime @default(now())
+  lead      Lead?    @relation(fields: [leadId], references: [id], onDelete: Cascade)
+}
+
+model Comment {
+  id        String   @id @default(uuid()) @db.Uuid
+  projectId String?  @db.Uuid
+  authorId  String?  @db.Uuid
+  body      String
+  createdAt DateTime @default(now())
+  project   Project? @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  author    User?    @relation(fields: [authorId], references: [id], onDelete: SetNull)
+}
+
+model Notification {
+  id        String    @id @default(uuid()) @db.Uuid
+  userId    String?   @db.Uuid
+  title     String
+  body      String
+  channel   String
+  readAt    DateTime?
+  createdAt DateTime  @default(now())
+  user      User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model AuditLog {
+  id         String      @id @default(uuid()) @db.Uuid
+  actorId    String?     @db.Uuid
+  action     AuditAction
+  entityType String
+  entityId   String?
+  metadata   Json?
+  ipAddress  String?
+  userAgent  String?
+  createdAt  DateTime    @default(now())
+  actor      User?       @relation(fields: [actorId], references: [id], onDelete: SetNull)
+
+  @@index([entityType, entityId])
+  @@index([actorId, createdAt])
+}

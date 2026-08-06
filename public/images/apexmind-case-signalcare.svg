@@ -1,0 +1,38 @@
+<svg width="640" height="280" viewBox="0 0 640 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBFF"/>
+      <stop offset="1" stop-color="#E7F1FF"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="170" y1="46" x2="470" y2="234" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F1B2D"/>
+      <stop offset="1" stop-color="#143A6B"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="192" y1="74" x2="448" y2="206" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#2563EB"/>
+    </linearGradient>
+    <filter id="shadow" x="104" y="24" width="432" height="248" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#0F1B2D" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+  <rect width="640" height="280" rx="16" fill="url(#bg)"/>
+  <path d="M0 214H640V280H0V214Z" fill="#DDEBFA"/>
+  <g filter="url(#shadow)">
+    <rect x="148" y="48" width="344" height="184" rx="28" fill="white"/>
+    <rect x="176" y="72" width="288" height="136" rx="22" fill="url(#screen)"/>
+    <rect x="210" y="100" width="94" height="12" rx="6" fill="#93C5FD"/>
+    <rect x="210" y="130" width="72" height="8" rx="4" fill="#DBEAFE" fill-opacity="0.28"/>
+    <rect x="210" y="154" width="104" height="8" rx="4" fill="#DBEAFE" fill-opacity="0.22"/>
+    <circle cx="386" cy="140" r="48" fill="url(#blue)" fill-opacity="0.16"/>
+    <path d="M342 142C358 120 371 156 386 140C400 126 414 158 430 136" stroke="#7DD3FC" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="342" cy="142" r="6" fill="#DBEAFE"/>
+    <circle cx="386" cy="140" r="6" fill="#DBEAFE"/>
+    <circle cx="430" cy="136" r="6" fill="#DBEAFE"/>
+  </g>
+  <circle cx="92" cy="74" r="6" fill="#2563EB" fill-opacity="0.28"/>
+  <circle cx="548" cy="72" r="8" fill="#38BDF8" fill-opacity="0.36"/>
+  <circle cx="560" cy="222" r="6" fill="#2563EB" fill-opacity="0.22"/>
+  <rect x="70" y="226" width="112" height="14" rx="7" fill="#0F1B2D" fill-opacity="0.12"/>
+  <rect x="458" y="226" width="112" height="14" rx="7" fill="#0F1B2D" fill-opacity="0.12"/>
+</svg>
