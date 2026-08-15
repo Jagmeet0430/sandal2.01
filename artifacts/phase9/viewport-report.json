@@ -1,0 +1,418 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "errors": [],
+    "contact": {
+      "y": 23828,
+      "sw": 1905,
+      "iw": 1920,
+      "heading": {
+        "top": 672.526611328125,
+        "bottom": 1057.776611328125,
+        "width": 541.625
+      },
+      "card": {
+        "top": 555.5386352539062,
+        "bottom": 1423.99267578125,
+        "width": 386.0672607421875
+      },
+      "cardOpacity": "0.3588",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 24831,
+      "sw": 1905,
+      "iw": 1920,
+      "footer": {
+        "top": 598.765625,
+        "bottom": 1079.765625,
+        "width": 1905
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 1440,
+    "height": 1080,
+    "errors": [],
+    "contact": {
+      "y": 23817,
+      "sw": 1425,
+      "iw": 1440,
+      "heading": {
+        "top": 686.8768310546875,
+        "bottom": 1043.5018310546875,
+        "width": 501.390625
+      },
+      "card": {
+        "top": 569.5763549804688,
+        "bottom": 1409.907958984375,
+        "width": 410.50946044921875
+      },
+      "cardOpacity": "0.3571",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 24820,
+      "sw": 1425,
+      "iw": 1440,
+      "footer": {
+        "top": 598.75,
+        "bottom": 1079.75,
+        "width": 1425
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 1280,
+    "height": 1080,
+    "errors": [],
+    "contact": {
+      "y": 23697,
+      "sw": 1265,
+      "iw": 1280,
+      "heading": {
+        "top": 694.7420043945312,
+        "bottom": 1011.7420043945312,
+        "width": 445.6875
+      },
+      "card": {
+        "top": 644.0271606445312,
+        "bottom": 1334.972900390625,
+        "width": 435.158935546875
+      },
+      "cardOpacity": "0.3474",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 24700,
+      "sw": 1265,
+      "iw": 1280,
+      "footer": {
+        "top": 598.5,
+        "bottom": 1079.5,
+        "width": 1265
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 1024,
+    "height": 1080,
+    "errors": [],
+    "contact": {
+      "y": 23693,
+      "sw": 1009,
+      "iw": 1024,
+      "heading": {
+        "top": 712.5305786132812,
+        "bottom": 966.1556396484375,
+        "width": 356.515625
+      },
+      "card": {
+        "top": 593.2908325195312,
+        "bottom": 1387.318603515625,
+        "width": 333.86956787109375
+      },
+      "cardOpacity": "0.3703",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 24703,
+      "sw": 1009,
+      "iw": 1024,
+      "footer": {
+        "top": 592.3125,
+        "bottom": 1080.3125,
+        "width": 1009
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "errors": [],
+    "contact": {
+      "y": 23287,
+      "sw": 753,
+      "iw": 768,
+      "heading": {
+        "top": 523.7910766601562,
+        "bottom": 618.8848266601562,
+        "width": 560
+      },
+      "card": {
+        "top": 1050.2138671875,
+        "bottom": 1515.8798828125,
+        "width": 698.6402587890625
+      },
+      "cardOpacity": "0.2889",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 24556,
+      "sw": 753,
+      "iw": 768,
+      "footer": {
+        "top": 359.828125,
+        "bottom": 1023.828125,
+        "width": 753
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "errors": [],
+    "contact": {
+      "y": 19776,
+      "sw": 430,
+      "iw": 430,
+      "heading": {
+        "top": 484.4350891113281,
+        "bottom": 649.4976196289062,
+        "width": 390
+      },
+      "card": {
+        "top": 1168.65869140625,
+        "bottom": 1877.0599365234375,
+        "width": 379.3000793457031
+      },
+      "cardOpacity": "0.0282",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 21522,
+      "sw": 430,
+      "iw": 430,
+      "footer": {
+        "top": 233.03125,
+        "bottom": 1279.03125,
+        "width": 430
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 390,
+    "height": 932,
+    "errors": [],
+    "contact": {
+      "y": 19856,
+      "sw": 390,
+      "iw": 390,
+      "heading": {
+        "top": 486.3118591308594,
+        "bottom": 651.3743896484375,
+        "width": 350
+      },
+      "card": {
+        "top": 1194.2197265625,
+        "bottom": 1928.8115234375,
+        "width": 340.1416320800781
+      },
+      "cardOpacity": "0",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 21655,
+      "sw": 390,
+      "iw": 390,
+      "footer": {
+        "top": 232.6875,
+        "bottom": 1306.6875,
+        "width": 390
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  },
+  {
+    "width": 360,
+    "height": 932,
+    "errors": [],
+    "contact": {
+      "y": 19878,
+      "sw": 360,
+      "iw": 360,
+      "heading": {
+        "top": 487.22906494140625,
+        "bottom": 652.2915649414062,
+        "width": 320
+      },
+      "card": {
+        "top": 1222.9154052734375,
+        "bottom": 1976.3658447265625,
+        "width": 310.9794921875
+      },
+      "cardOpacity": "0",
+      "ctaHref": "mailto:hello@apexmind.ai",
+      "emailHref": "mailto:hello@apexmind.ai",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "y": 21725,
+      "sw": 360,
+      "iw": 360,
+      "footer": {
+        "top": 232.8125,
+        "bottom": 1306.8125,
+        "width": 360
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15,
+      "text": "ApexMind\n\nDIGITAL INTELLIGENCE\n\nApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.\n\nhello@apexmind.ai\nCOMPANY\nAbout\nWork\nContact\nCAPABILITIES\nAI Products\nCloud Platforms\nAutomation\nDigital"
+    }
+  }
+]

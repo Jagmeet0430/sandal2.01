@@ -1,9 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { SmoothScroll } from "@/components/providers/SmoothScroll";
-import { Footer } from "@/components/layout/Footer";
-import { Header } from "@/components/layout/Header";
-import { GlobalBackground } from "@/components/three/GlobalBackground";
+import { WebGLProvider } from "@/components/webgl/WebGLProvider";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
@@ -88,28 +85,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange={false}
-        >
-          <SmoothScroll>
-            <GlobalBackground />
-
-            <div className="relative z-10">
-              <a
-                href="#main-content"
-                className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand-primary focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:text-white focus:shadow-button"
-              >
-                Skip to content
-              </a>
-
-              <Header />
-              {children}
-              <Footer />
-            </div>
-          </SmoothScroll>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <WebGLProvider>
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-[var(--purple)] focus:px-4 focus:py-3 focus:text-sm focus:font-bold focus:text-white"
+            >
+              Skip to content
+            </a>
+            {children}
+          </WebGLProvider>
         </ThemeProvider>
       </body>
     </html>

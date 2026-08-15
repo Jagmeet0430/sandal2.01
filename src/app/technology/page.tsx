@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/layout/PageHero";
-import { TechnologyOrbit } from "@/components/home/TechnologyOrbit";
 
 export default function TechnologyPage() {
   return (
@@ -16,8 +15,6 @@ export default function TechnologyPage() {
         }
         description="A focused technology ecosystem selected for performance, security, integrations, and long-term scalability."
       />
-
-      <TechnologyOrbit />
     </main>
   );
 }

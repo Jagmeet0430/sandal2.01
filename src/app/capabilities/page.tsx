@@ -1,4 +1,3 @@
-import { CinematicServiceDetails } from "@/components/home/CinematicServiceDetails";
 import { PageHero } from "@/components/layout/PageHero";
 
 export default function CapabilitiesPage() {
@@ -16,8 +15,6 @@ export default function CapabilitiesPage() {
         }
         description="Explore our capabilities across artificial intelligence, automation, cloud platforms, and experience design."
       />
-
-      <CinematicServiceDetails />
     </main>
   );
 }

@@ -1,11 +1,12 @@
 import { NextResponse } from "next/server";
 
 const allowedServices = new Set([
-  "AI Products",
+  "AI Product",
   "Automation",
-  "Cloud Platforms",
-  "Experience Design",
-  "Other",
+  "Cloud Platform",
+  "Digital Product",
+  "Strategy",
+  "Not sure yet",
 ]);
 
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
@@ -18,6 +19,7 @@ type ContactRequest = {
   company?: string;
   service?: string;
   details?: string;
+  message?: string;
   website?: string;
 };
 
@@ -91,14 +93,14 @@ export async function POST(request: Request) {
       email: sanitize(data.email, 180).toLowerCase(),
       company: sanitize(data.company, 160),
       service: sanitize(data.service, 80),
-      details: sanitize(data.details, 1600),
+      details: sanitize(data.details || data.message, 1600),
     };
 
-    if (!payload.name || !payload.email || !payload.service || !payload.details) {
+    if (payload.name.length < 2 || !payload.email || !payload.service || payload.details.length < 20) {
       return NextResponse.json(
         {
           success: false,
-          message: "Please complete all required fields.",
+          message: "Please complete all required fields with enough detail.",
         },
         {
           status: 400,

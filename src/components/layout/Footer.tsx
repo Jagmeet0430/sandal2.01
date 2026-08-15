@@ -1,77 +1,110 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUp, Mail } from "lucide-react";
 
-const footerLinks = [
-  { label: "Home", href: "/" },
-  { label: "Capabilities", href: "/capabilities" },
-  { label: "Process", href: "/process" },
-  { label: "Technology", href: "/technology" },
-  { label: "Work", href: "/work" },
-  { label: "Contact", href: "/contact" },
-  { label: "Privacy", href: "/contact" },
-  { label: "Terms", href: "/contact" },
+const footerColumns = [
+  {
+    title: "Company",
+    links: [
+      { label: "About", href: "#home" },
+      { label: "Work", href: "#work" },
+      { label: "Contact", href: "#contact" },
+    ],
+  },
+  {
+    title: "Capabilities",
+    links: [
+      { label: "AI Products", href: "#capabilities" },
+      { label: "Cloud Platforms", href: "#capabilities" },
+      { label: "Automation", href: "#automation" },
+      { label: "Digital Intelligence", href: "#capabilities" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "Process", href: "#process" },
+      { label: "Technology", href: "#technology" },
+      { label: "Privacy", href: "#contact" },
+      { label: "Terms", href: "#contact" },
+    ],
+  },
 ];
 
 export function Footer() {
   return (
-    <footer className="cinematic-section relative overflow-hidden border-t border-theme">
-      <div className="cinematic-noise" />
-      <div className="pointer-events-none absolute inset-x-[12%] bottom-[-180px] h-[320px] rounded-[50%] bg-purple-700/20 blur-[120px]" />
-      <div className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full border border-purple-300/10" />
-      <div className="pointer-events-none absolute -right-12 top-20 h-52 w-52 rounded-full border border-purple-300/10" />
+    <footer className="relative overflow-hidden bg-[var(--background)] px-5 text-[var(--foreground)]">
+      <div aria-hidden="true" className="absolute inset-x-[12%] bottom-[-220px] h-[320px] rounded-[50%] bg-purple-700/[0.08] blur-[110px] dark:bg-purple-700/18 dark:blur-[120px]" />
+      <div aria-hidden="true" className="absolute -right-28 top-16 h-72 w-72 rounded-full border border-purple-200/8" />
+      <div aria-hidden="true" className="absolute -right-12 top-28 h-44 w-44 rounded-full border border-purple-200/8" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
-      <div className="relative z-10 mx-auto max-w-[1380px] px-5 py-14 md:px-8 lg:px-10 lg:py-20">
-        <div className="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-start">
-          <div>
-            <Link href="/" className="inline-flex items-center gap-3" aria-label="ApexMind home">
-              <Image src="/logos/apexmind-mark.svg" alt="" width={34} height={34} />
+      <div className="relative mx-auto max-w-[1240px] py-16 sm:py-20 lg:py-24">
+        <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+          <div data-footer-reveal>
+            <Link href="#home" className="inline-flex items-center gap-3" aria-label="ApexMind home">
+              <Image src="/logos/apexmind-mark.svg" alt="" width={36} height={36} />
               <div>
-                <p className="text-xl font-semibold tracking-[-0.03em]">ApexMind</p>
-                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-theme-muted">
+                <p className="text-2xl font-extrabold text-[var(--text)] dark:text-white">ApexMind</p>
+                <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-purple-200/62">
                   Digital Intelligence
                 </p>
               </div>
             </Link>
 
-            <p className="mt-6 max-w-[520px] text-sm leading-7 text-theme-secondary">
-              Intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.
+            <p className="mt-7 max-w-[520px] text-sm leading-7 text-[var(--text-secondary)] dark:text-white/56">
+              ApexMind builds intelligent applications, automation systems, cloud platforms, and
+              digital products for modern businesses.
             </p>
 
             <a
               href="mailto:hello@apexmind.ai"
-              className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-theme-secondary transition hover:text-purple-700 dark:hover:text-purple-200"
+              className="mt-7 inline-flex text-sm font-semibold text-[var(--text)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/72 dark:hover:text-purple-200"
             >
-              <span className="grid size-10 place-items-center rounded-full border border-theme cinematic-surface">
-                <Mail className="size-4 text-purple-700 dark:text-purple-200" />
-              </span>
               hello@apexmind.ai
             </a>
           </div>
 
-          <nav aria-label="Footer navigation" className="grid gap-3 sm:grid-cols-2 lg:min-w-[420px] lg:grid-cols-3">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="rounded-full px-1 py-2 text-sm font-semibold text-theme-secondary transition hover:text-purple-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:hover:text-purple-200"
-              >
-                {link.label}
-              </Link>
+          <nav
+            data-footer-reveal
+            aria-label="Footer navigation"
+            className="grid gap-10 sm:grid-cols-3"
+          >
+            {footerColumns.map((column) => (
+              <div key={column.title}>
+                <h2 className="text-[10px] font-semibold uppercase tracking-[0.22em] text-purple-200/68">
+                  {column.title}
+                </h2>
+                <ul className="mt-5 grid gap-3">
+                  {column.links.map((link) => (
+                    <li key={`${column.title}-${link.label}`}>
+                      <Link
+                        href={link.href}
+                        className="text-sm text-[var(--text-secondary)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/50 dark:hover:text-purple-200"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </nav>
         </div>
 
-        <div className="mt-14 flex flex-col gap-5 border-t border-theme pt-8 text-sm text-theme-muted sm:flex-row sm:items-center sm:justify-between">
+        <div
+          data-footer-reveal
+          className="mt-14 flex flex-col gap-4 border-t border-[var(--border-color)] pt-7 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:text-white/38"
+        >
           <p>&copy; {new Date().getFullYear()} ApexMind. All rights reserved.</p>
-
-          <a
-            href="#main-content"
-            aria-label="Scroll to the top"
-            className="inline-flex size-11 items-center justify-center rounded-full border border-theme cinematic-surface text-theme-primary shadow-[0_12px_34px_rgba(124,44,255,0.2)] transition hover:-translate-y-1 hover:border-purple-300/40 hover:bg-purple-600"
-          >
-            <ArrowUp className="size-5" />
-          </a>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <Link href="#contact" className="transition hover:text-purple-200">
+              Privacy
+            </Link>
+            <Link href="#contact" className="transition hover:text-purple-200">
+              Terms
+            </Link>
+            <span>Built for practical intelligence.</span>
+          </div>
         </div>
       </div>
     </footer>

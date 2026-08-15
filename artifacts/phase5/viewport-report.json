@@ -1,0 +1,884 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 8006,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 12469,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 0.9864,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 13610,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 14796,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 15985,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 14802,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 13612,
+          "maxScroll": 16634,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1905,
+          "innerWidth": 1920
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "height": 1080,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 8192,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 12461,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 0.9871,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 13599,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 14785,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 15974,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 14787,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 13601,
+          "maxScroll": 16623,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1425,
+          "innerWidth": 1440
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1280,
+    "height": 1080,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 7913,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 12341,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 0.9924,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 13479,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 14665,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 15853,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 14667,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 13479,
+          "maxScroll": 16503,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1265,
+          "innerWidth": 1280
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 1024,
+    "height": 1080,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 7910,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 12339,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 0.9967,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 13475,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 14662,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 15849,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 14667,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 13477,
+          "maxScroll": 16499,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 1009,
+          "innerWidth": 1024
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 7744,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 12034,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 0.9263,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 13119,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 0.9927,
+            "text": "BUILD"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 14246,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 15371,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 14247,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 13122,
+          "maxScroll": 15987,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 753,
+          "innerWidth": 768
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 6740,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 10229,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 0.9998,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 10934,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 11672,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 12410,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 11672,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 10934,
+          "maxScroll": 12813,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 430,
+          "innerWidth": 430
+        }
+      }
+    ],
+    "errors": []
+  },
+  {
+    "width": 390,
+    "height": 932,
+    "samples": [
+      {
+        "name": "discover",
+        "value": {
+          "scrollY": 6678,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Discover"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DISCOVER"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      },
+      {
+        "name": "define",
+        "value": {
+          "scrollY": 10392,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Define"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "DEFINE"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      },
+      {
+        "name": "build",
+        "value": {
+          "scrollY": 11097,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      },
+      {
+        "name": "validate",
+        "value": {
+          "scrollY": 11835,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      },
+      {
+        "name": "scale",
+        "value": {
+          "scrollY": 12573,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Scale"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "SCALE"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      },
+      {
+        "name": "reverse-validate",
+        "value": {
+          "scrollY": 11835,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Validate"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "VALIDATE"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      },
+      {
+        "name": "reverse-build",
+        "value": {
+          "scrollY": 11097,
+          "maxScroll": 12976,
+          "activePanel": {
+            "opacity": 1,
+            "title": "Build"
+          },
+          "activeLabel": {
+            "opacity": 1,
+            "text": "BUILD"
+          },
+          "scrollWidth": 390,
+          "innerWidth": 390
+        }
+      }
+    ],
+    "errors": []
+  }
+]

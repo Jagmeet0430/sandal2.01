@@ -1,19 +1,42 @@
-import { CinematicAbout } from "@/components/home/CinematicAbout";
-import { CinematicHero } from "@/components/home/CinematicHero";
-import { CinematicServiceDetails } from "@/components/home/CinematicServiceDetails";
-import { CinematicServices } from "@/components/home/CinematicServices";
-import { Process } from "@/components/home/Process";
-import { TechnologyOrbit } from "@/components/home/TechnologyOrbit";
+import { FloatingHeader } from "@/components/layout/FloatingHeader";
+import { CapabilitiesStory } from "@/components/sections/CapabilitiesStory";
+import { AutomationSection } from "@/components/sections/AutomationSection";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { Footer } from "@/components/layout/Footer";
+import { HeroStory } from "@/components/sections/HeroStory";
+import { ImpactSection } from "@/components/sections/ImpactSection";
+import { ProcessStory } from "@/components/sections/ProcessStory";
+import { SelectedWork } from "@/components/sections/SelectedWork";
+import { TechnologySection } from "@/components/sections/TechnologySection";
+import { getDraftHomeContent, getPublishedHomeContent } from "@/lib/cms/store";
 
-export default function Home() {
+type HomeProps = {
+  searchParams?: Promise<{
+    preview?: string;
+  }>;
+};
+
+export default async function Home({ searchParams }: HomeProps) {
+  const params = await searchParams;
+  const homeContent =
+    params?.preview === "home-draft"
+      ? await getDraftHomeContent()
+      : await getPublishedHomeContent();
+
   return (
     <main id="main-content">
-      <CinematicHero />
-      <CinematicServices />
-      <CinematicAbout />
-      <CinematicServiceDetails />
-      <Process />
-      <TechnologyOrbit />
+      <FloatingHeader />
+      <div id="home">
+        <HeroStory content={homeContent} />
+      </div>
+      <CapabilitiesStory />
+      <SelectedWork />
+      <ProcessStory />
+      <AutomationSection />
+      <TechnologySection />
+      <ImpactSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }

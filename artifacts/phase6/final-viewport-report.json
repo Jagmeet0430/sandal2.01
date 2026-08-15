@@ -1,0 +1,254 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "errors": [],
+    "sample": {
+      "sw": 1905,
+      "iw": 1920,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -128.234375,
+        "bottom": 1079.765625
+      },
+      "heading": {
+        "top": 312.21875,
+        "bottom": 409.296875
+      },
+      "visual": {
+        "top": 142.4375,
+        "bottom": 809.09375,
+        "width": 720,
+        "height": 666.65625
+      }
+    }
+  },
+  {
+    "width": 1440,
+    "height": 1080,
+    "errors": [],
+    "sample": {
+      "sw": 1425,
+      "iw": 1440,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -128.25,
+        "bottom": 1079.75
+      },
+      "heading": {
+        "top": 313.515625,
+        "bottom": 407.96875
+      },
+      "visual": {
+        "top": 162.421875,
+        "bottom": 789.078125,
+        "width": 676.796875,
+        "height": 626.65625
+      }
+    }
+  },
+  {
+    "width": 1280,
+    "height": 1080,
+    "errors": [],
+    "sample": {
+      "sw": 1265,
+      "iw": 1280,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -128.5,
+        "bottom": 1079.5
+      },
+      "heading": {
+        "top": 318.515625,
+        "bottom": 402.484375
+      },
+      "visual": {
+        "top": 196.984375,
+        "bottom": 754.015625,
+        "width": 601.59375,
+        "height": 557.03125
+      }
+    }
+  },
+  {
+    "width": 1024,
+    "height": 1080,
+    "errors": [],
+    "sample": {
+      "sw": 1009,
+      "iw": 1024,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -127.6875,
+        "bottom": 1080.3125
+      },
+      "heading": {
+        "top": 317.15625,
+        "bottom": 384.328125
+      },
+      "visual": {
+        "top": 253.5,
+        "bottom": 699.109375,
+        "width": 481.265625,
+        "height": 445.609375
+      }
+    }
+  },
+  {
+    "width": 768,
+    "height": 1024,
+    "errors": [],
+    "sample": {
+      "sw": 753,
+      "iw": 768,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -351.9375,
+        "bottom": 1023.703125
+      },
+      "heading": {
+        "top": -159.78125,
+        "bottom": -109.40625
+      },
+      "visual": {
+        "top": 316.59375,
+        "bottom": 927.703125,
+        "width": 660,
+        "height": 611.109375
+      }
+    }
+  },
+  {
+    "width": 430,
+    "height": 932,
+    "errors": [],
+    "sample": {
+      "sw": 430,
+      "iw": 430,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -397.21875,
+        "bottom": 931.515625
+      },
+      "heading": {
+        "top": -231.625,
+        "bottom": -189.640625
+      },
+      "visual": {
+        "top": 344.359375,
+        "bottom": 851.515625,
+        "width": 395.59375,
+        "height": 507.15625
+      }
+    }
+  },
+  {
+    "width": 390,
+    "height": 932,
+    "errors": [],
+    "sample": {
+      "sw": 390,
+      "iw": 390,
+      "nodes": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "connectors": [
+        "0px",
+        "0px",
+        "0px",
+        "0px",
+        "0px"
+      ],
+      "section": {
+        "top": -349.1875,
+        "bottom": 932.375
+      },
+      "heading": {
+        "top": -183.59375,
+        "bottom": -141.609375
+      },
+      "visual": {
+        "top": 392.390625,
+        "bottom": 852.375,
+        "width": 358.796875,
+        "height": 459.984375
+      }
+    }
+  }
+]

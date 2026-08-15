@@ -17,13 +17,12 @@ import {
   Sparkles,
   X,
 } from "lucide-react";
-import { ThemeToggle } from "@/components/common/ThemeToggle";
+import { WebsiteCmsManager } from "@/components/admin/WebsiteCmsManager";
 import {
   adminModules,
   auditEvents,
   calendarSeed,
   channelData,
-  cmsSeed,
   dashboardMetrics,
   dealSeed,
   leadSeed,
@@ -35,7 +34,6 @@ import {
   supportTicketSeed,
   type AdminModuleId,
   type AdminProject,
-  type CmsSection,
   type Lead,
   type LeadStatus,
   type PermissionAction,
@@ -73,18 +71,12 @@ export function AdminShell() {
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [toast, setToast] = useState("");
   const [leads, setLeads] = useState<Lead[]>(leadSeed);
-  const [cmsSections, setCmsSections] = useState<CmsSection[]>(cmsSeed);
   const [projects, setProjects] = useState<AdminProject[]>(projectSeed);
   const [permissionMatrix, setPermissionMatrix] = useState<PermissionMatrix>(permissionMatrixSeed);
 
   useEffect(() => {
-    const stored = window.localStorage.getItem("apexmind-admin-cms");
     const storedProjects = window.localStorage.getItem("apexmind-admin-projects");
     const storedPermissions = window.localStorage.getItem("apexmind-admin-permissions");
-
-    if (stored) {
-      setCmsSections(JSON.parse(stored) as CmsSection[]);
-    }
 
     if (storedProjects) {
       setProjects(JSON.parse(storedProjects) as AdminProject[]);
@@ -94,10 +86,6 @@ export function AdminShell() {
       setPermissionMatrix(JSON.parse(storedPermissions) as PermissionMatrix);
     }
   }, []);
-
-  useEffect(() => {
-    window.localStorage.setItem("apexmind-admin-cms", JSON.stringify(cmsSections));
-  }, [cmsSections]);
 
   useEffect(() => {
     window.localStorage.setItem("apexmind-admin-projects", JSON.stringify(projects));
@@ -147,16 +135,6 @@ export function AdminShell() {
   const updateLeadStatus = (leadId: string, status: LeadStatus) => {
     setLeads((current) => current.map((lead) => (lead.id === leadId ? { ...lead, status } : lead)));
     setToast(`Lead ${leadId} moved to ${status}.`);
-  };
-
-  const updateCmsCopy = (sectionId: string, copy: string) => {
-    setCmsSections((current) =>
-      current.map((section) =>
-        section.id === sectionId
-          ? { ...section, copy, status: "Draft", updated: "Autosaved now", completion: Math.min(100, section.completion + 3) }
-          : section,
-      ),
-    );
   };
 
   const updateProjectStatus = (projectId: string, status: ProjectStatus) => {
@@ -216,9 +194,9 @@ export function AdminShell() {
   };
 
   return (
-    <main id="main-content" className="min-h-screen bg-[#f6f3fb] text-[#17131f] dark:bg-[#050508] dark:text-[#f6f2ff]">
-      <div className="fixed inset-0 bg-[radial-gradient(circle_at_82%_10%,rgba(124,44,255,0.18),transparent_32%),radial-gradient(circle_at_10%_70%,rgba(14,165,233,0.12),transparent_30%)]" />
-      <div className="fixed inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(26,18,37,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(26,18,37,0.2)_1px,transparent_1px)] [background-size:64px_64px] dark:opacity-[0.06] dark:[background-image:linear-gradient(rgba(255,255,255,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.2)_1px,transparent_1px)]" />
+    <main id="main-content" className="dark min-h-screen overflow-x-hidden bg-[#06060A] text-[#F5F2FA]">
+      <div className="fixed inset-0 bg-[radial-gradient(circle_at_82%_10%,rgba(139,61,255,0.16),transparent_31%),radial-gradient(circle_at_10%_72%,rgba(116,83,255,0.10),transparent_30%)]" />
+      <div className="fixed inset-0 opacity-[0.055] [background-image:linear-gradient(rgba(255,255,255,0.18)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.18)_1px,transparent_1px)] [background-size:64px_64px]" />
 
       <AdminSidebar
         activeModule={activeModule}
@@ -245,11 +223,11 @@ export function AdminShell() {
         <div className="mx-auto w-full max-w-[1520px] px-4 pb-10 pt-24 sm:px-6 lg:px-8">
           <div className="mb-8 flex flex-col gap-5 xl:flex-row xl:items-end xl:justify-between">
             <div>
-              <p className="text-xs font-bold uppercase tracking-[0.22em] text-violet-700 dark:text-violet-300">
+              <p className="text-xs font-bold uppercase tracking-[0.22em] text-[#A855F7]">
                 {active.group}
               </p>
               <h1 className="mt-3 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">{active.label}</h1>
-              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#625c6d] dark:text-[#aaa4b8]">
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#A49EAE]">
                 {active.description}
               </p>
             </div>
@@ -258,14 +236,14 @@ export function AdminShell() {
               <button
                 type="button"
                 onClick={() => setCommandOpen(true)}
-                className="inline-flex h-11 items-center gap-2 rounded-full border border-black/10 bg-white/70 px-4 text-sm font-bold text-[#625c6d] backdrop-blur-xl transition hover:border-violet-500/30 hover:text-violet-700 dark:border-white/10 dark:bg-white/[0.06] dark:text-[#aaa4b8] dark:hover:text-violet-200"
+                className="inline-flex h-11 items-center gap-2 rounded-xl border border-white/[0.08] bg-[#111018] px-4 text-sm font-bold text-[#A49EAE] backdrop-blur-xl transition hover:border-[#8B3DFF]/45 hover:bg-[#15131E] hover:text-[#F5F2FA] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B3DFF]"
               >
                 <Command className="size-4" />
                 Command
               </button>
               <button
                 type="button"
-                className="inline-flex h-11 items-center gap-2 rounded-full bg-violet-600 px-5 text-sm font-bold text-white shadow-[0_18px_50px_rgba(124,44,255,0.32)] transition hover:-translate-y-0.5 hover:bg-violet-500"
+                className="inline-flex h-11 items-center gap-2 rounded-xl bg-gradient-to-b from-[#8B3DFF] to-[#5B16C9] px-5 text-sm font-bold text-white shadow-[0_18px_50px_rgba(139,61,255,0.28)] transition hover:-translate-y-0.5 hover:from-[#A855F7] hover:to-[#7453FF] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B3DFF]"
               >
                 <Plus className="size-4" />
                 Create
@@ -274,7 +252,7 @@ export function AdminShell() {
           </div>
 
           {activeModule === "dashboard" ? <DashboardPanel leads={leads} /> : null}
-          {activeModule === "website" ? <WebsiteCmsPanel sections={cmsSections} onChange={updateCmsCopy} /> : null}
+          {activeModule === "website" ? <WebsiteCmsManager /> : null}
           {activeModule === "crm" ? <CrmPanel leads={leads} onStatusChange={updateLeadStatus} onExport={exportLeads} /> : null}
           {activeModule === "projects" ? <ProjectsPanel projects={projects} onStatusChange={updateProjectStatus} /> : null}
           {activeModule === "users" ? (
@@ -336,7 +314,7 @@ function AdminSidebar({
 
       <aside
         className={[
-          "fixed inset-y-0 left-0 z-40 w-[292px] border-r border-black/10 bg-white/82 p-4 backdrop-blur-2xl transition-transform duration-300 dark:border-white/10 dark:bg-[#08060d]/88",
+          "fixed inset-y-0 left-0 z-40 w-[292px] border-r border-white/[0.08] bg-[#0B0A11]/95 p-4 shadow-[24px_0_80px_rgba(0,0,0,0.28)] backdrop-blur-2xl transition-transform duration-300",
           open ? "translate-x-0" : "-translate-x-full lg:translate-x-0",
         ].join(" ")}
       >
@@ -348,13 +326,13 @@ function AdminSidebar({
               </span>
               <span>
                 <span className="block text-sm font-black">ApexMind</span>
-                <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-[#8b8495]">
+                <span className="block text-[10px] font-bold uppercase tracking-[0.18em] text-[#A49EAE]">
                   Admin OS
                 </span>
               </span>
             </Link>
 
-            <button type="button" className="grid size-9 place-items-center rounded-full lg:hidden" onClick={onClose}>
+            <button type="button" className="grid size-9 place-items-center rounded-xl border border-white/[0.08] bg-[#15131E] text-[#F5F2FA] lg:hidden" onClick={onClose}>
               <X className="size-5" />
             </button>
           </div>
@@ -362,7 +340,7 @@ function AdminSidebar({
           <nav className="mt-5 flex-1 space-y-6 overflow-y-auto pr-1">
             {Object.entries(grouped).map(([group, items]) => (
               <div key={group}>
-                <p className="mb-2 px-3 text-[10px] font-black uppercase tracking-[0.18em] text-[#8b8495]">{group}</p>
+                <p className="mb-2 px-3 text-[10px] font-black uppercase tracking-[0.18em] text-[#6F687A]">{group}</p>
                 <div className="grid gap-1">
                   {items.map((item) => {
                     const Icon = item.icon;
@@ -374,13 +352,13 @@ function AdminSidebar({
                         type="button"
                         onClick={() => onSelect(item.id)}
                         className={[
-                          "flex items-center gap-3 rounded-2xl px-3 py-2.5 text-left text-sm font-bold transition",
+                          "group relative flex items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm font-bold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8B3DFF]",
                           active
-                            ? "bg-violet-600 text-white shadow-[0_16px_44px_rgba(124,44,255,0.28)]"
-                            : "text-[#625c6d] hover:bg-black/[0.04] hover:text-[#17131f] dark:text-[#aaa4b8] dark:hover:bg-white/[0.06] dark:hover:text-white",
+                            ? "bg-[#15131E] text-white shadow-[inset_3px_0_0_#8B3DFF,0_14px_40px_rgba(0,0,0,0.22)]"
+                            : "text-[#A49EAE] hover:bg-[#15131E]/78 hover:text-white",
                         ].join(" ")}
                       >
-                        <Icon className="size-4 shrink-0" />
+                        <Icon className={["size-4 shrink-0", active ? "text-[#A855F7]" : "text-[#746D80] group-hover:text-[#A855F7]"].join(" ")} />
                         {item.label}
                       </button>
                     );
@@ -390,12 +368,12 @@ function AdminSidebar({
             ))}
           </nav>
 
-          <div className="mt-4 rounded-[24px] border border-black/10 bg-black/[0.035] p-4 dark:border-white/10 dark:bg-white/[0.05]">
+          <div className="mt-4 rounded-[20px] border border-white/[0.08] bg-[#111018] p-4">
             <div className="flex items-center gap-3">
-              <ShieldCheck className="size-5 text-violet-600 dark:text-violet-300" />
+              <ShieldCheck className="size-5 text-[#A855F7]" />
               <p className="text-sm font-black">Security posture</p>
             </div>
-            <p className="mt-2 text-xs leading-6 text-[#625c6d] dark:text-[#aaa4b8]">
+            <p className="mt-2 text-xs leading-6 text-[#A49EAE]">
               RBAC matrix, 2FA policy, sessions, and audit logs are mapped for the admin workspace.
             </p>
           </div>
@@ -423,47 +401,54 @@ function AdminTopbar({
   onNotifications: () => void;
 }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-30 border-b border-black/10 bg-white/76 backdrop-blur-2xl dark:border-white/10 dark:bg-[#050508]/78 lg:left-[292px]">
+    <header className="fixed inset-x-0 top-0 z-30 border-b border-white/[0.08] bg-[#06060A]/86 backdrop-blur-2xl lg:left-[292px]">
       <div className="flex h-20 items-center gap-3 px-4 sm:px-6 lg:px-8">
         <button
           type="button"
           aria-label="Open admin sidebar"
-          className="grid size-10 place-items-center rounded-full border border-black/10 bg-white/70 lg:hidden dark:border-white/10 dark:bg-white/[0.06]"
+          className="grid size-10 place-items-center rounded-xl border border-white/[0.08] bg-[#111018] text-[#F5F2FA] transition hover:bg-[#15131E] lg:hidden"
           onClick={onMenu}
         >
           <Menu className="size-5" />
         </button>
 
-        <div className="hidden min-w-0 text-sm font-bold text-[#625c6d] dark:text-[#aaa4b8] md:block">
-          Admin / <span className="text-[#17131f] dark:text-white">{activeLabel}</span>
+        <div className="hidden min-w-0 text-sm font-bold text-[#A49EAE] md:block">
+          Dashboard / <span className="text-[#F5F2FA]">{activeLabel}</span>
         </div>
 
         <div className="relative ml-auto hidden w-full max-w-xl md:block">
-          <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[#8b8495]" />
+          <Search className="pointer-events-none absolute left-4 top-1/2 size-4 -translate-y-1/2 text-[#706979]" />
           <input
             value={query}
             onChange={(event) => onQueryChange(event.target.value)}
             placeholder="Search modules, settings, leads..."
-            className="h-11 w-full rounded-full border border-black/10 bg-white/74 pl-11 pr-24 text-sm outline-none transition placeholder:text-[#8b8495] focus:border-violet-500/45 focus:ring-4 focus:ring-violet-500/10 dark:border-white/10 dark:bg-white/[0.06]"
+            className="h-11 w-full rounded-xl border border-white/[0.08] bg-[#111018] pl-11 pr-24 text-sm text-[#F5F2FA] outline-none transition placeholder:text-[#706979] focus:border-[#8B3DFF]/55 focus:ring-4 focus:ring-[#8B3DFF]/12"
           />
           <button
             type="button"
             onClick={onCommand}
-            className="absolute right-2 top-1/2 inline-flex h-8 -translate-y-1/2 items-center gap-1 rounded-full border border-black/10 px-3 text-[11px] font-black text-[#625c6d] dark:border-white/10 dark:text-[#aaa4b8]"
+            className="absolute right-2 top-1/2 inline-flex h-8 -translate-y-1/2 items-center gap-1 rounded-lg border border-white/[0.08] bg-[#15131E] px-3 text-[11px] font-black text-[#A49EAE] transition hover:text-white"
           >
             <Command className="size-3" />
             K
           </button>
         </div>
 
-        <ThemeToggle />
+        <button
+          type="button"
+          onClick={onCommand}
+          className="hidden h-11 items-center gap-2 rounded-xl bg-gradient-to-b from-[#8B3DFF] to-[#5B16C9] px-4 text-sm font-black text-white shadow-[0_14px_36px_rgba(139,61,255,0.26)] transition hover:-translate-y-0.5 hover:from-[#A855F7] hover:to-[#7453FF] sm:inline-flex"
+        >
+          <Plus className="size-4" />
+          Create
+        </button>
 
         <button
           type="button"
           aria-label="Open notifications"
           aria-expanded={notificationsOpen}
           onClick={onNotifications}
-          className="relative grid size-11 place-items-center rounded-full border border-black/10 bg-white/70 transition hover:border-violet-500/30 dark:border-white/10 dark:bg-white/[0.06]"
+          className="relative grid size-11 place-items-center rounded-xl border border-white/[0.08] bg-[#111018] text-[#F5F2FA] transition hover:border-[#8B3DFF]/45 hover:bg-[#15131E]"
         >
           <Bell className="size-4" />
           <span className="absolute right-3 top-3 size-2 rounded-full bg-red-500" />
@@ -471,11 +456,11 @@ function AdminTopbar({
 
         <button
           type="button"
-          className="hidden h-11 items-center gap-3 rounded-full border border-black/10 bg-white/70 px-2 pr-4 text-sm font-bold dark:border-white/10 dark:bg-white/[0.06] sm:flex"
+          className="hidden h-11 items-center gap-3 rounded-xl border border-white/[0.08] bg-[#111018] px-2 pr-4 text-sm font-bold text-[#F5F2FA] transition hover:bg-[#15131E] sm:flex"
         >
           <span className="grid size-7 place-items-center rounded-full bg-violet-600 text-xs text-white">GM</span>
           Gopesh
-          <ChevronDown className="size-4 text-[#8b8495]" />
+          <ChevronDown className="size-4 text-[#706979]" />
         </button>
       </div>
     </header>
@@ -538,62 +523,6 @@ function DashboardPanel({ leads }: { leads: Lead[] }) {
           </div>
         </Panel>
       </section>
-    </div>
-  );
-}
-
-function WebsiteCmsPanel({
-  sections,
-  onChange,
-}: {
-  sections: CmsSection[];
-  onChange: (sectionId: string, copy: string) => void;
-}) {
-  return (
-    <div className="grid gap-6 xl:grid-cols-[1.05fr_0.95fr]">
-      <Panel title="Editable website sections" action="Autosave enabled">
-        <div className="grid gap-4">
-          {sections.map((section) => (
-            <article key={section.id} className="rounded-[24px] border border-black/10 bg-white/68 p-5 dark:border-white/10 dark:bg-white/[0.045]">
-              <div className="flex flex-wrap items-start justify-between gap-4">
-                <div>
-                  <p className="font-black">{section.section}</p>
-                  <p className="mt-1 text-xs text-[#8b8495]">{section.owner} - {section.updated}</p>
-                </div>
-                <span className="rounded-full border border-black/10 px-3 py-1 text-xs font-black text-[#625c6d] dark:border-white/10 dark:text-[#aaa4b8]">
-                  {section.status}
-                </span>
-              </div>
-              <textarea
-                value={section.copy}
-                onChange={(event) => onChange(section.id, event.target.value)}
-                className="mt-4 min-h-24 w-full resize-y rounded-2xl border border-black/10 bg-white/75 p-4 text-sm leading-7 outline-none transition focus:border-violet-500/45 focus:ring-4 focus:ring-violet-500/10 dark:border-white/10 dark:bg-white/[0.06]"
-              />
-              <div className="mt-4 h-2 overflow-hidden rounded-full bg-black/10 dark:bg-white/10">
-                <span className="block h-full rounded-full bg-violet-600" style={{ width: `${section.completion}%` }} />
-              </div>
-            </article>
-          ))}
-        </div>
-      </Panel>
-
-      <Panel title="Live preview" action="Draft">
-        <div className="overflow-hidden rounded-[28px] border border-black/10 bg-[#f6f3fb] p-5 dark:border-white/10 dark:bg-[#050508]">
-          <div className="rounded-[24px] bg-gradient-to-br from-violet-700 via-purple-600 to-indigo-600 p-8 text-white shadow-[0_24px_80px_rgba(124,44,255,0.24)]">
-            <p className="text-xs font-black uppercase tracking-[0.22em] text-violet-100">Website preview</p>
-            <h2 className="mt-5 text-4xl font-black tracking-[-0.05em]">{sections[0]?.copy}</h2>
-            <p className="mt-5 text-sm leading-7 text-violet-100">{sections[1]?.copy}</p>
-          </div>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            {sections.slice(2).map((section) => (
-              <div key={section.id} className="rounded-2xl border border-black/10 bg-white/80 p-4 dark:border-white/10 dark:bg-white/[0.06]">
-                <p className="text-xs font-black uppercase tracking-[0.16em] text-violet-700 dark:text-violet-300">{section.section}</p>
-                <p className="mt-3 text-sm leading-6 text-[#625c6d] dark:text-[#aaa4b8]">{section.copy}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Panel>
     </div>
   );
 }

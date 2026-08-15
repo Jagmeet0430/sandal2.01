@@ -1,0 +1,118 @@
+[
+  {
+    "width": 1440,
+    "height": 1080,
+    "errors": [],
+    "contact": {
+      "sw": 1425,
+      "iw": 1440,
+      "heading": {
+        "top": 201.4788055419922,
+        "bottom": 558.1037445068359
+      },
+      "card": {
+        "top": 91.84866333007812,
+        "bottom": 939.6356506347656,
+        "width": 417.12713623046875
+      },
+      "cardOpacity": "0.9113",
+      "headingOpacity": "0.9991",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ],
+      "headerHrefs": [
+        "#home",
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact",
+        "mailto:hello@apexmind.ai",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "sw": 1425,
+      "iw": 1440,
+      "footer": {
+        "top": 598.75,
+        "bottom": 1079.75,
+        "width": 1425
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15
+    }
+  },
+  {
+    "width": 390,
+    "height": 932,
+    "errors": [],
+    "contact": {
+      "sw": 390,
+      "iw": 390,
+      "heading": {
+        "top": 24.292648315429688,
+        "bottom": 189.3551483154297
+      },
+      "card": {
+        "top": 748.5194702148438,
+        "bottom": 1492.51171875,
+        "width": 346.67364501953125
+      },
+      "cardOpacity": "0.677",
+      "headingOpacity": "0.9331",
+      "targets": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "navHrefs": [
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact"
+      ],
+      "headerHrefs": [
+        "#home",
+        "#home",
+        "#capabilities",
+        "#process",
+        "#technology",
+        "#work",
+        "#contact",
+        "mailto:hello@apexmind.ai",
+        "#contact"
+      ]
+    },
+    "footer": {
+      "sw": 390,
+      "iw": 390,
+      "footer": {
+        "top": 139.6875,
+        "bottom": 1213.6875,
+        "width": 390
+      },
+      "emailHref": "mailto:hello@apexmind.ai",
+      "linkCount": 15
+    }
+  }
+]

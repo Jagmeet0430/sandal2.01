@@ -1,4 +1,3 @@
-import { CinematicWork } from "@/components/home/CinematicWork";
 import { PageHero } from "@/components/layout/PageHero";
 
 export default function WorkPage() {
@@ -16,8 +15,6 @@ export default function WorkPage() {
         }
         description="Explore platform, automation, and AI assistant concepts shaped for clear operational outcomes."
       />
-
-      <CinematicWork />
     </main>
   );
 }

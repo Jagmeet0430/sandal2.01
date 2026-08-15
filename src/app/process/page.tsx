@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/layout/PageHero";
-import { ProcessTabs } from "@/components/home/ProcessTabs";
 
 export default function ProcessPage() {
   return (
@@ -16,12 +15,6 @@ export default function ProcessPage() {
         }
         description="A focused process for understanding, designing, building, testing, and scaling intelligent digital products."
       />
-
-      <section className="px-5 pb-20">
-        <div className="mx-auto max-w-[1280px]">
-          <ProcessTabs />
-        </div>
-      </section>
     </main>
   );
 }

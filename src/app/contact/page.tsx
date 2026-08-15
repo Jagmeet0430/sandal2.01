@@ -1,4 +1,3 @@
-import { CinematicContact } from "@/components/home/CinematicContact";
 import { PageHero } from "@/components/layout/PageHero";
 
 export default function ContactPage() {
@@ -16,8 +15,6 @@ export default function ContactPage() {
         }
         description="Tell us what you want to build, improve, or automate. We will help you understand the best next step."
       />
-
-      <CinematicContact />
     </main>
   );
 }
