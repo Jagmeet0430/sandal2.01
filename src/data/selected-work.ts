@@ -27,28 +27,28 @@ export type SelectedWork = {
 };
 
 export const selectedWork: SelectedWork = {
-  eyebrow: "SELECTED WORK",
-  heading: "Selected systems built for measurable impact",
-  title: "AI Operations Intelligence Platform",
+  eyebrow: "PORTFOLIO / CASE STUDIES",
+  heading: "Proof-ready systems for real business impact",
+  title: "AI-Enabled Company Platform",
   description:
-    "A secure operational intelligence platform combining workflow automation, retrieval systems, analytics, and AI-assisted decision support.",
+    "A secure platform concept for enquiries, portfolio CMS, AI website assistance, workflow automation, analytics, and admin controls.",
   challenge:
-    "Operational teams were working across disconnected tools, manual approvals, and fragmented reporting, creating slower response times and limited visibility.",
+    "Growing companies lose time when leads, project requests, case studies, website content, and follow-ups sit in disconnected tools.",
   solution:
-    "ApexMind designed an AI-assisted operations platform that connects workflows, retrieves relevant knowledge, surfaces live analytics, and supports faster operational decisions.",
-  badges: ["AI Product", "Automation", "Cloud Platform", "Analytics"],
+    "Alyvora connects the enquiry, CMS, AI assistant, analytics, and follow-up workflow into one secure operating layer.",
+  badges: ["AI Assistant", "Lead Management", "Admin CMS", "Analytics"],
   metrics: [
     {
       value: "40%",
-      label: "less manual processing",
+      label: "less repetitive admin work",
     },
     {
       value: "3x",
-      label: "faster operational reporting",
+      label: "faster enquiry follow-up",
     },
     {
       value: "24/7",
-      label: "AI-assisted decision support",
+      label: "AI-assisted website support",
     },
   ],
   ctas: [
@@ -58,7 +58,7 @@ export const selectedWork: SelectedWork = {
       variant: "primary",
     },
     {
-      label: "Discuss a Similar Project",
+      label: "Request a Project Quotation",
       href: "/contact",
       variant: "secondary",
     },

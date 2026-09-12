@@ -1,13 +1,13 @@
 import { FloatingHeader } from "@/components/layout/FloatingHeader";
-import { CapabilitiesStory } from "@/components/sections/CapabilitiesStory";
-import { AutomationSection } from "@/components/sections/AutomationSection";
+import { BusinessImpactSection } from "@/components/sections/BusinessImpactSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { DeliveryProcessSection } from "@/components/sections/DeliveryProcessSection";
 import { Footer } from "@/components/layout/Footer";
 import { HeroStory } from "@/components/sections/HeroStory";
-import { ImpactSection } from "@/components/sections/ImpactSection";
-import { ProcessStory } from "@/components/sections/ProcessStory";
 import { SelectedWork } from "@/components/sections/SelectedWork";
-import { TechnologySection } from "@/components/sections/TechnologySection";
+import { ServicesOverview } from "@/components/sections/ServicesOverview";
+import { TechnologyOverviewSection } from "@/components/sections/TechnologyOverviewSection";
+import { TrustProofSection } from "@/components/sections/TrustProofSection";
 import { getDraftHomeContent, getPublishedHomeContent } from "@/lib/cms/store";
 
 type HomeProps = {
@@ -29,12 +29,12 @@ export default async function Home({ searchParams }: HomeProps) {
       <div id="home">
         <HeroStory content={homeContent} />
       </div>
-      <CapabilitiesStory />
+      <TrustProofSection />
+      <ServicesOverview />
       <SelectedWork />
-      <ProcessStory />
-      <AutomationSection />
-      <TechnologySection />
-      <ImpactSection />
+      <DeliveryProcessSection />
+      <TechnologyOverviewSection />
+      <BusinessImpactSection />
       <ContactSection />
       <Footer />
     </main>

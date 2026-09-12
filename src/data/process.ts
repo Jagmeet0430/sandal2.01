@@ -15,8 +15,8 @@ export const processStages: ProcessStage[] = [
     number: "01",
     title: "Discover",
     description:
-      "We study the business problem, user needs, existing workflows, technical constraints, and measurable goals.",
-    points: ["Stakeholder discovery", "Workflow analysis", "Technical assessment"],
+      "We understand the business goal, users, current tools, required service, budget range, timeline, and launch constraints.",
+    points: ["Problem brief", "User/workflow map", "Success metrics"],
     visualLabel: "DISCOVER",
   },
   {
@@ -24,8 +24,8 @@ export const processStages: ProcessStage[] = [
     number: "02",
     title: "Define",
     description:
-      "We turn discovery findings into a clear product direction, architecture, delivery plan, and success criteria.",
-    points: ["Product scope", "System architecture", "Delivery roadmap"],
+      "We turn the brief into scope, features, technical architecture, content needs, integrations, and delivery milestones.",
+    points: ["Feature scope", "Architecture plan", "Project estimate"],
     visualLabel: "DEFINE",
   },
   {
@@ -33,8 +33,8 @@ export const processStages: ProcessStage[] = [
     number: "03",
     title: "Build",
     description:
-      "We design and engineer the product in focused iterations with continuous technical review.",
-    points: ["UX and interface design", "Application engineering", "AI and system integration"],
+      "We design and engineer the website, app, dashboard, automation, API, AI workflow, or cloud platform in focused sprints.",
+    points: ["UI/UX design", "Frontend/backend build", "AI integration"],
     visualLabel: "BUILD",
   },
   {
@@ -42,8 +42,8 @@ export const processStages: ProcessStage[] = [
     number: "04",
     title: "Validate",
     description:
-      "We test the product with real workflows, measure performance, address risk, and prepare for release.",
-    points: ["Functional testing", "Security and reliability checks", "User validation"],
+      "We test real workflows, responsive screens, forms, security basics, performance, integrations, and admin controls.",
+    points: ["QA testing", "Security checks", "Launch checklist"],
     visualLabel: "VALIDATE",
   },
   {
@@ -51,8 +51,8 @@ export const processStages: ProcessStage[] = [
     number: "05",
     title: "Scale",
     description:
-      "We improve performance, automate operations, monitor usage, and support long-term product growth.",
-    points: ["Monitoring and optimization", "Infrastructure scaling", "Continuous improvement"],
+      "We support improvements after launch: SEO, analytics, monitoring, automation, content updates, and new feature planning.",
+    points: ["Analytics review", "Maintenance", "Roadmap updates"],
     visualLabel: "SCALE",
   },
 ];

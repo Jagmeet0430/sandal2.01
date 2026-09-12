@@ -5,19 +5,19 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    title: "AI product strategy",
-    description: "Roadmaps that connect business outcomes, system constraints, and practical AI opportunities.",
+    title: "AI & automation solutions",
+    description: "AI assistants, chatbots, RAG systems, AI agents, generative AI integrations, analytics, and workflow automation.",
   },
   {
-    title: "Custom software platforms",
-    description: "Secure, scalable product experiences for teams modernizing enterprise operations.",
+    title: "Custom software development",
+    description: "CRM, ERP, POS, SaaS platforms, dashboards, education portals, healthcare software, APIs, and internal systems.",
   },
   {
-    title: "Workflow automation",
-    description: "Connected operational flows that reduce manual handoffs and surface better decisions.",
+    title: "Web & mobile applications",
+    description: "Corporate websites, custom web apps, e-commerce platforms, PWAs, mobile apps, client portals, and responsive UI/UX.",
   },
   {
-    title: "Cloud and data systems",
-    description: "Reliable infrastructure and data paths for AI-ready products, analytics, and governance.",
+    title: "Cloud, DevOps & consulting",
+    description: "Cloud infrastructure, database architecture, API integrations, AI consulting, MVP development, maintenance, and digital transformation.",
   },
 ];

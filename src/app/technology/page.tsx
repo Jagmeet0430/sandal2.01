@@ -1,8 +1,13 @@
 import { PageHero } from "@/components/layout/PageHero";
+import { FloatingHeader } from "@/components/layout/FloatingHeader";
+import { Footer } from "@/components/layout/Footer";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { TechnologyOverviewSection } from "@/components/sections/TechnologyOverviewSection";
 
 export default function TechnologyPage() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="bg-[var(--background)] text-[var(--foreground)]">
+      <FloatingHeader />
       <PageHero
         eyebrow="Technology"
         title={
@@ -13,8 +18,11 @@ export default function TechnologyPage() {
             </span>
           </>
         }
-        description="A focused technology ecosystem selected for performance, security, integrations, and long-term scalability."
+        description="A practical technology ecosystem spanning Next.js, React, TypeScript, PostgreSQL, Prisma, Node.js, FastAPI, OpenAI, Anthropic, RAG, vector databases, Vercel, AWS, Docker, and CI/CD."
       />
+      <TechnologyOverviewSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }

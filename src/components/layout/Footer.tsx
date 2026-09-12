@@ -5,27 +5,27 @@ const footerColumns = [
   {
     title: "Company",
     links: [
-      { label: "About", href: "#home" },
-      { label: "Work", href: "#work" },
-      { label: "Contact", href: "#contact" },
+      { label: "About", href: "/" },
+      { label: "Work", href: "/work" },
+      { label: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Capabilities",
     links: [
-      { label: "AI Products", href: "#capabilities" },
-      { label: "Cloud Platforms", href: "#capabilities" },
-      { label: "Automation", href: "#automation" },
-      { label: "Digital Intelligence", href: "#capabilities" },
+      { label: "AI Solutions", href: "/capabilities" },
+      { label: "Custom Software", href: "/capabilities" },
+      { label: "Automation", href: "/capabilities" },
+      { label: "Web & Mobile", href: "/capabilities" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Process", href: "#process" },
-      { label: "Technology", href: "#technology" },
-      { label: "Privacy", href: "#contact" },
-      { label: "Terms", href: "#contact" },
+      { label: "Process", href: "/process" },
+      { label: "Technology", href: "/technology" },
+      { label: "Privacy", href: "/contact" },
+      { label: "Terms", href: "/contact" },
     ],
   },
 ];
@@ -41,26 +41,27 @@ export function Footer() {
       <div className="relative mx-auto max-w-[1240px] py-16 sm:py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div data-footer-reveal>
-            <Link href="#home" className="inline-flex items-center gap-3" aria-label="ApexMind home">
+            <Link href="/" className="inline-flex items-center gap-3" aria-label="Alyvora home">
               <Image src="/logos/apexmind-mark.svg" alt="" width={36} height={36} />
               <div>
-                <p className="text-2xl font-extrabold text-[var(--text)] dark:text-white">ApexMind</p>
+                <p className="text-2xl font-extrabold text-[var(--text)] dark:text-white">Alyvora</p>
                 <p className="mt-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-purple-200/62">
-                  Digital Intelligence
+                  AI Technologies
                 </p>
               </div>
             </Link>
 
             <p className="mt-7 max-w-[520px] text-sm leading-7 text-[var(--text-secondary)] dark:text-white/56">
-              ApexMind builds intelligent applications, automation systems, cloud platforms, and
-              digital products for modern businesses.
+              Alyvora AI Technologies Private Limited builds AI solutions, custom software,
+              automation systems, web and mobile applications, cloud platforms, and digital
+              transformation programs for modern businesses.
             </p>
 
             <a
-              href="mailto:hello@apexmind.ai"
+              href="mailto:hello@alyvora.ai"
               className="mt-7 inline-flex text-sm font-semibold text-[var(--text)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/72 dark:hover:text-purple-200"
             >
-              hello@apexmind.ai
+              hello@alyvora.ai
             </a>
           </div>
 
@@ -95,15 +96,15 @@ export function Footer() {
           data-footer-reveal
           className="mt-14 flex flex-col gap-4 border-t border-[var(--border-color)] pt-7 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:text-white/38"
         >
-          <p>&copy; {new Date().getFullYear()} ApexMind. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Alyvora AI Technologies Private Limited. All rights reserved.</p>
           <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="#contact" className="transition hover:text-purple-200">
+            <Link href="/contact" className="transition hover:text-purple-200">
               Privacy
             </Link>
-            <Link href="#contact" className="transition hover:text-purple-200">
+            <Link href="/contact" className="transition hover:text-purple-200">
               Terms
             </Link>
-            <span>Built for practical intelligence.</span>
+            <span>Intelligent Technology. Real Business Impact.</span>
           </div>
         </div>
       </div>

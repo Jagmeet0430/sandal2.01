@@ -10,7 +10,7 @@ export function TechnologyNode() {
         <span className="absolute bottom-[10px] right-[10px] h-2 w-2 rounded-full border border-white/32" />
       </div>
       <span className="text-[10px] font-semibold uppercase tracking-[0.24em] text-purple-100">
-        ApexMind
+        Alyvora
       </span>
       <span className="mt-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-white/36">
         System Layer

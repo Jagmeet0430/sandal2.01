@@ -1,24 +1,24 @@
 export const impactContent = {
   eyebrow: "IMPACT",
-  primary: "Systems built for measurable impact",
+  primary: "Useful technology that improves how the business works",
   paragraph:
-    "We design intelligent systems that improve operations, automate repetitive work, and create long-term business value.",
+    "Alyvora does not just ship screens. The goal is to help clients capture better leads, reduce manual work, serve users faster, and build a technology base that can grow.",
   benefits: [
     {
       title: "Operational efficiency",
-      description: "Streamline workflows and reduce manual effort",
+      description: "Reduce repetitive work and keep follow-ups visible",
     },
     {
       title: "Intelligent automation",
-      description: "Connect systems and trigger faster actions",
+      description: "Use AI where it saves time or improves decisions",
     },
     {
       title: "Scalable growth",
-      description: "Build foundations that support long-term expansion",
+      description: "Build foundations for SEO, analytics, cloud, and future features",
     },
   ],
   ctas: [
-    { label: "Start a Conversation", href: "/contact" },
+    { label: "Start Your Project", href: "/contact" },
     { label: "See Our Process", href: "/process" },
   ],
 };

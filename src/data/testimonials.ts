@@ -15,7 +15,7 @@ export const testimonials: Testimonial[] = [
     initials: "MC",
     image: "/images/apexmind-testimonial-maya.svg",
     quote:
-      "ApexMind gave our leadership team the operating clarity we needed. The platform connected decisions, workflows, and reporting without creating another layer of busywork.",
+      "Alyvora gave our leadership team the operating clarity we needed. The platform connected decisions, workflows, and reporting without creating another layer of busywork.",
   },
   {
     name: "Julian Brooks",
@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     initials: "JB",
     image: "/images/apexmind-testimonial-julian.svg",
     quote:
-      "The ApexMind team moved from strategy to production with unusual discipline. Every sprint had a clear purpose, and the final system was easy for our internal teams to own.",
+      "The Alyvora team moved from strategy to production with unusual discipline. Every sprint had a clear purpose, and the final system was easy for our internal teams to own.",
   },
   {
     name: "Priya Nair",

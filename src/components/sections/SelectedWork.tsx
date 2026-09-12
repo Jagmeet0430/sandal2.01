@@ -39,8 +39,8 @@ export function SelectedWork() {
 
       gsap.set(mockup, {
         autoAlpha: 0,
-        x: 70,
-        rotateY: -3,
+        x: 46,
+        rotateY: -2,
         scale: 0.96,
         transformPerspective: 1000,
         transformOrigin: "center center",
@@ -56,22 +56,22 @@ export function SelectedWork() {
       });
 
       gsap.set(workLayer("main"), {
-        x: 44,
-        y: 28,
-        rotation: -4,
+        x: 28,
+        y: 20,
+        rotation: -2,
         scale: 0.94,
       });
 
       gsap.set(workLayer("insight"), {
-        x: 28,
-        y: 26,
+        x: 18,
+        y: 18,
         rotation: 0,
         scale: 0.98,
       });
 
       gsap.set(workLayer("activity"), {
-        x: 24,
-        y: 30,
+        x: 14,
+        y: 22,
         rotation: 0,
         scale: 0.98,
       });
@@ -123,7 +123,7 @@ export function SelectedWork() {
           autoAlpha: 1,
           x: 0,
           y: 0,
-          rotation: 2,
+          rotation: 0,
           scale: 1,
           duration: 0.56,
         }, 0.38)
@@ -131,27 +131,27 @@ export function SelectedWork() {
           autoAlpha: 1,
           x: 0,
           y: 0,
-          rotation: -1,
+          rotation: 0,
           scale: 1,
           duration: 0.56,
         }, 0.46)
         .to("[data-work-layer='main']", {
-          y: -10,
+          y: -8,
           rotation: 0,
           duration: 1,
           ease: "none",
         }, 0.62)
         .to("[data-work-layer='insight']", {
-          x: 12,
-          y: -14,
-          rotation: 2,
+          x: 8,
+          y: -10,
+          rotation: 0,
           duration: 1,
           ease: "none",
         }, 0.62)
         .to("[data-work-layer='activity']", {
-          x: -10,
-          y: 14,
-          rotation: -1,
+          x: -8,
+          y: 10,
+          rotation: 0,
           duration: 1,
           ease: "none",
         }, 0.62)
@@ -162,9 +162,17 @@ export function SelectedWork() {
           ease: "none",
         }, 0.62);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();
@@ -174,12 +182,12 @@ export function SelectedWork() {
     <section
       ref={sectionRef}
       id="work"
-      className="section-padding relative overflow-hidden bg-[var(--background)] px-5 text-[var(--foreground)]"
+      className="relative overflow-hidden bg-[var(--background)] px-5 py-16 text-[var(--foreground)] sm:py-20 lg:py-24"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_47%,rgba(124,58,237,0.075),transparent_26%),radial-gradient(circle_at_19%_86%,rgba(139,92,246,0.035),transparent_24%)] dark:bg-[radial-gradient(circle_at_75%_47%,rgba(139,61,255,0.11),transparent_28%),radial-gradient(circle_at_19%_86%,rgba(116,83,255,0.045),transparent_24%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_42%,rgba(124,58,237,0.08),transparent_30%),radial-gradient(circle_at_20%_82%,rgba(37,99,235,0.045),transparent_24%)] dark:bg-[radial-gradient(circle_at_76%_42%,rgba(139,61,255,0.12),transparent_32%),radial-gradient(circle_at_20%_82%,rgba(37,99,235,0.07),transparent_28%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-300/20 to-transparent" />
 
-      <div className="relative mx-auto grid min-h-[calc(100vh-7rem)] max-w-[1420px] items-center gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-20 xl:gap-24">
+      <div className="relative mx-auto grid max-w-[1240px] items-center gap-10 lg:grid-cols-[minmax(0,0.96fr)_minmax(460px,0.9fr)] lg:gap-12">
         <WorkContent work={selectedWork} />
         <WorkMockup />
       </div>

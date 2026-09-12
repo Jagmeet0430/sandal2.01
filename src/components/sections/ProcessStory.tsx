@@ -391,9 +391,17 @@ export function ProcessStory() {
           duration: 0.8,
         }, 4.4);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();
@@ -409,7 +417,7 @@ export function ProcessStory() {
               A focused process from first idea to long-term growth
             </h2>
             <p className="ds-body mt-6 max-w-[680px]">
-              ApexMind combines product strategy, engineering, validation, and continuous improvement to turn complex ideas into reliable systems.
+              Alyvora combines product strategy, engineering, validation, and continuous improvement to turn complex ideas into reliable systems.
             </p>
           </div>
           <ProcessVisual />
@@ -442,7 +450,7 @@ export function ProcessStory() {
                 A focused process from first idea to long-term growth
               </h2>
               <p className="ds-body mt-4 max-w-[580px]">
-                ApexMind combines product strategy, engineering, validation, and continuous improvement to turn complex ideas into reliable systems.
+                Alyvora combines product strategy, engineering, validation, and continuous improvement to turn complex ideas into reliable systems.
               </p>
             </div>
 

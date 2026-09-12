@@ -18,7 +18,7 @@ export type SocialLink = NavigationItem & {
 
 export const primaryNavigation: NavigationItem[] = [
   { label: "Home", href: "/" },
-  { label: "Capabilities", href: "/capabilities" },
+  { label: "Services", href: "/capabilities" },
   { label: "Process", href: "/process" },
   { label: "Technology", href: "/technology" },
   { label: "Work", href: "/work" },
@@ -27,10 +27,10 @@ export const primaryNavigation: NavigationItem[] = [
 
 export const footerColumns: FooterColumn[] = [
   {
-    title: "ApexMind",
+    title: "Alyvora",
     links: [
       { label: "Home", href: "/" },
-      { label: "Capabilities", href: "/capabilities" },
+      { label: "Services", href: "/capabilities" },
       { label: "Process", href: "/process" },
       { label: "Technology", href: "/technology" },
     ],
@@ -47,5 +47,5 @@ export const footerColumns: FooterColumn[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: "Email ApexMind", href: "mailto:hello@apexmind.ai", icon: Mail },
+  { label: "Email Alyvora", href: "mailto:hello@alyvora.ai", icon: Mail },
 ];

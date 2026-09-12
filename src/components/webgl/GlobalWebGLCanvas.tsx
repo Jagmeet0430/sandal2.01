@@ -1,13 +1,14 @@
 "use client";
 
 import { Canvas, useThree } from "@react-three/fiber";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { useTheme } from "next-themes";
 import type { WebGLRenderer } from "three";
 import type { WebGLThemeName } from "@/lib/webglTheme";
 import { detectWebGLSupport, type WebGLSupportResult } from "@/lib/webglSupport";
 import { SceneController } from "@/components/webgl/SceneController";
 import { WebGLFallback } from "@/components/webgl/WebGLFallback";
+import { getActiveWebGLScene, subscribeWebGLScene } from "@/store/webgl-state";
 
 function usePageVisibility() {
   const [isHidden, setIsHidden] = useState(false);
@@ -66,7 +67,13 @@ export function GlobalWebGLCanvas() {
   const [contextLost, setContextLost] = useState(false);
   const { resolvedTheme } = useTheme();
   const isHidden = usePageVisibility();
+  const activeScene = useSyncExternalStore(
+    subscribeWebGLScene,
+    getActiveWebGLScene,
+    () => "none",
+  );
   const theme: WebGLThemeName = resolvedTheme === "light" ? "light" : "dark";
+  const shouldRender = !isHidden && activeScene !== "none";
 
   useEffect(() => {
     setSupport(detectWebGLSupport());
@@ -102,7 +109,7 @@ export function GlobalWebGLCanvas() {
       <Canvas
         camera={{ fov: 42, position: [0, 0, 7.2], near: 0.1, far: 80 }}
         dpr={[1, 1.5]}
-        frameloop={isHidden ? "never" : "always"}
+        frameloop={shouldRender ? "always" : "never"}
         gl={{
           antialias: true,
           alpha: true,

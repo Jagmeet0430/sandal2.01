@@ -6,7 +6,7 @@ type ContactCTAProps = {
   className?: string;
 };
 
-export function ContactCTA({ href = "mailto:hello@apexmind.ai", children, className = "" }: ContactCTAProps) {
+export function ContactCTA({ href = "mailto:hello@alyvora.ai", children, className = "" }: ContactCTAProps) {
   return (
     <Link
       data-contact-cta

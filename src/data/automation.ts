@@ -7,25 +7,25 @@ export type AutomationWorkflowNode = {
 };
 
 export const automationContent = {
-  eyebrow: "SERVICE CAPABILITIES",
+  eyebrow: "AI & AUTOMATION",
   number: "03",
-  heading: "Automation",
+  heading: "Business automation built around real workflows",
   description:
-    "Connected systems that reduce repetitive work, improve operational speed, and create reliable workflows across teams and tools.",
+    "Alyvora connects teams, tools, and data so repetitive work becomes reliable, monitored, and easier to improve.",
   bullets: [
+    "AI assistants and chatbots",
+    "RAG-based AI systems",
+    "AI agents",
     "Workflow automation",
     "System integrations",
-    "Event-driven actions",
-    "Approval and notification flows",
-    "Operational monitoring",
     "Human-in-the-loop controls",
   ],
-  cta: "Explore automation",
+  cta: "Book a Free Consultation",
   progress: [
-    "01 AI Products",
-    "02 Cloud Platforms",
+    "01 AI Solutions",
+    "02 Custom Software",
     "03 Automation",
-    "04 Digital Intelligence",
+    "04 Web & Mobile",
   ],
 };
 

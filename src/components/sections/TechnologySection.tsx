@@ -127,9 +127,17 @@ export function TechnologySection() {
         .to(statuses, { autoAlpha: 1, scale: 1, duration: 0.22, stagger: 0.035 }, 0.84)
         .to(categories, { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.07 }, 0.94);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();

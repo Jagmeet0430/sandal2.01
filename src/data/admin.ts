@@ -150,7 +150,7 @@ export const adminModules: AdminModule[] = [
   { id: "analytics", label: "Analytics", group: "Intelligence", icon: BarChart3, description: "Traffic, conversion, SEO, AI usage, blog, projects, and revenue-readiness metrics." },
   { id: "settings", label: "Settings", group: "System", icon: Settings, description: "Branding, SMTP, Cloudinary, analytics pixels, social links, SEO, legal, and API keys." },
   { id: "users", label: "Users & RBAC", group: "System", icon: ShieldCheck, description: "Roles, permission matrix, sessions, invitations, and account controls." },
-  { id: "audit", label: "Audit Logs", group: "System", icon: Activity, description: "Login, logout, create, update, delete, publish, settings, and permission changes." },
+  { id: "audit", label: "Activity Log", group: "System", icon: Activity, description: "Create, update, delete, publish, settings, and permission changes across the admin workspace." },
   { id: "security", label: "Security", group: "System", icon: LockKeyhole, description: "2FA, device tracking, IP logs, password policy, rate limits, and secure sessions." },
 ];
 
@@ -285,7 +285,7 @@ export const calendarSeed = [
 
 export const cmsSeed: CmsSection[] = [
   { id: "hero", section: "Hero Section", owner: "Content", status: "Published", updated: "2h ago", completion: 100, copy: "Intelligence built for what comes next." },
-  { id: "about", section: "Company Story", owner: "Founder Office", status: "Draft", updated: "Today", completion: 72, copy: "ApexMind combines strategy, design, AI, and engineering." },
+  { id: "about", section: "Company Story", owner: "Founder Office", status: "Draft", updated: "Today", completion: 72, copy: "Alyvora combines strategy, design, AI, and engineering." },
   { id: "services", section: "Services", owner: "Growth", status: "Published", updated: "Yesterday", completion: 96, copy: "AI products, automation, cloud platforms, and experience design." },
   { id: "case-studies", section: "Portfolio", owner: "Marketing", status: "Scheduled", updated: "Friday", completion: 84, copy: "Selected systems built for measurable impact." },
 ];
