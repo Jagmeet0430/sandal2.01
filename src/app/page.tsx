@@ -24,9 +24,9 @@ export default async function Home({ searchParams }: HomeProps) {
       : await getPublishedHomeContent();
 
   return (
-    <main id="main-content">
+    <main id="main-content" className="bg-[var(--background)] text-[var(--foreground)]">
       <FloatingHeader />
-      <div id="home">
+      <div id="home" data-scroll-anchor>
         <HeroStory content={homeContent} />
       </div>
       <TrustProofSection />

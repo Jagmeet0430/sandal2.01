@@ -13,7 +13,7 @@ export function HeroCreate({ content = defaultHomeContent.whatWeCreate }: HeroCr
   const cards = [...content.cards].sort((a, b) => a.order - b.order);
 
   return (
-    <div data-hero-state="create-content" className="relative h-full max-w-full overflow-hidden px-5 pt-24 sm:pt-28">
+    <div data-hero-state="create-content" className="relative h-full max-w-full overflow-hidden px-5 pt-[calc(var(--header-height)+2.5rem)] md:pt-28">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_73%,rgba(124,58,237,0.11),transparent_31%),radial-gradient(circle_at_82%_26%,rgba(139,92,246,0.07),transparent_26%)] dark:bg-[radial-gradient(circle_at_50%_73%,rgba(139,61,255,0.25),transparent_33%),radial-gradient(circle_at_82%_26%,rgba(139,61,255,0.12),transparent_28%)]" />
       <div data-create-orbit className="pointer-events-none absolute right-[-3%] top-[-8%] hidden h-[360px] w-[470px] rotate-[15deg] rounded-[50%] border border-[var(--border-strong)] lg:block" />
       <div data-create-orbit className="pointer-events-none absolute right-[5%] top-[-2%] hidden h-[270px] w-[370px] rotate-[-10deg] rounded-[50%] border border-[var(--border-color)] lg:block" />

@@ -1,15 +1,42 @@
 import { Award, Bot, Code2, Cpu, ShieldCheck, Sparkles } from "lucide-react";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { selectedWork } from "@/data/selected-work";
 
-const logoPlaceholders = ["Client One", "Partner Two", "Studio Three", "Venture Four", "Clinic Five"];
+const verifiedClientLogos: Array<{ name: string; logo?: string }> = [
+  // Add real client/partner names and optional logo paths here once they are approved for public use.
+  // Example: { name: "Client Name", logo: "/logos/client-name.svg" }
+];
 
-const caseStudies = Array.from({ length: 3 }, (_, index) => ({
-  id: `case-study-${index + 1}`,
-  projectName: "{{project_name}}",
-  challenge: "{{challenge}}",
-  solution: "{{solution}}",
-  metrics: ["{{metric_1}}", "{{metric_2}}", "{{metric_3}}"],
-}));
+const caseStudies = [
+  {
+    id: "ai-company-platform",
+    projectName: selectedWork.title,
+    challenge: selectedWork.challenge,
+    solution: selectedWork.solution,
+    metrics: selectedWork.metrics.map((metric) => `${metric.value} ${metric.label}`),
+  },
+  {
+    id: "automation-operations-layer",
+    projectName: "Operations Automation Layer",
+    challenge: "Manual handoffs and repetitive updates slowed response times across sales, delivery, and support teams.",
+    solution: "Alyvora designs connected workflows that route requests, trigger notifications, and keep teams aligned from one operating surface.",
+    metrics: ["Faster task routing", "Less manual reporting", "Clearer ownership"],
+  },
+  {
+    id: "ai-knowledge-assistant",
+    projectName: "AI Knowledge Assistant",
+    challenge: "Customers and internal teams needed faster answers without searching across scattered documents and service pages.",
+    solution: "Alyvora builds retrieval-based assistants that surface trusted information, qualify intent, and guide users toward the right next step.",
+    metrics: ["24/7 guided support", "Trusted knowledge retrieval", "Higher enquiry quality"],
+  },
+];
+
+const founderProfile = {
+  name: "Alyvora AI Technologies",
+  title: "AI, software, automation, and cloud systems partner",
+  bio:
+    "Alyvora combines product strategy, engineering, automation, and artificial intelligence to build practical systems for growing businesses.",
+};
 
 const credibilityBadges = [
   { label: "Years of experience", icon: Award },
@@ -24,9 +51,9 @@ export function TrustProofSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_18%,rgba(124,58,237,0.08),transparent_26%),radial-gradient(circle_at_16%_76%,rgba(37,99,235,0.055),transparent_24%)]" />
 
       <div className="relative mx-auto max-w-[1240px]">
-        <TrustStrip />
+        {verifiedClientLogos.length > 0 ? <TrustStrip logos={verifiedClientLogos} /> : null}
 
-        <div className="mt-12 grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
+        <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
           <div>
             <SectionLabel>Trust & Proof</SectionLabel>
             <h2 className="mt-5 text-[clamp(2.35rem,4vw,4.5rem)] font-semibold leading-[1.04] tracking-normal text-[var(--text)]">
@@ -51,7 +78,7 @@ export function TrustProofSection() {
   );
 }
 
-function TrustStrip() {
+function TrustStrip({ logos }: { logos: Array<{ name: string; logo?: string }> }) {
   return (
     <div className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[0_18px_58px_var(--shadow-color)]">
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
@@ -59,12 +86,12 @@ function TrustStrip() {
           Trusted By
         </p>
         <div className="grid flex-1 grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
-          {logoPlaceholders.map((logo) => (
+          {logos.map((client) => (
             <div
-              key={logo}
+              key={client.name}
               className="group inline-flex min-h-12 items-center justify-center rounded-[14px] border border-[var(--border)] bg-[var(--surface-elevated)] px-4 text-center text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)] grayscale transition-[border-color,color,filter,transform] duration-200 hover:-translate-y-0.5 hover:border-purple-300/35 hover:text-[var(--purple)] hover:grayscale-0"
             >
-              {logo}
+              {client.name}
             </div>
           ))}
         </div>
@@ -87,13 +114,13 @@ function CaseStudyCard({
 }) {
   return (
     <article className="rounded-[24px] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_58px_var(--shadow-color)] transition hover:-translate-y-0.5 hover:border-purple-300/30">
-      <div className="flex items-start justify-between gap-4">
-        <div className="grid size-10 place-items-center rounded-[14px] border border-purple-300/20 bg-purple-500/10 text-purple-200">
+      <div className="flex flex-wrap items-start justify-between gap-3">
+        <div className="grid size-10 shrink-0 place-items-center rounded-[14px] border border-purple-300/20 bg-purple-500/10 text-purple-200">
           {index === 0 ? <Bot aria-hidden="true" className="size-5" /> : null}
           {index === 1 ? <Code2 aria-hidden="true" className="size-5" /> : null}
           {index === 2 ? <Sparkles aria-hidden="true" className="size-5" /> : null}
         </div>
-        <span className="rounded-full border border-[var(--border)] bg-[var(--surface-elevated)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--purple)]">
+        <span className="shrink-0 rounded-full border border-[var(--border)] bg-[var(--surface-elevated)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--purple)]">
           Featured Project
         </span>
       </div>
@@ -140,11 +167,11 @@ function FounderBlock() {
       <div>
         <SectionLabel className="text-[var(--purple)]">Founder Credibility</SectionLabel>
         <h3 className="mt-3 text-2xl font-semibold tracking-normal text-[var(--text)] sm:text-3xl">
-          {"{{founder_name}}"}
+          {founderProfile.name}
         </h3>
-        <p className="mt-1 text-sm font-bold text-[var(--purple)]">{"{{founder_title}}"}</p>
+        <p className="mt-1 text-sm font-bold text-[var(--purple)]">{founderProfile.title}</p>
         <p className="mt-4 max-w-[780px] text-sm leading-7 text-[var(--text-secondary)] sm:text-base">
-          {"{{founder_bio_sentence_1}} {{founder_bio_sentence_2}} {{founder_bio_sentence_3}}"}
+          {founderProfile.bio}
         </p>
 
         <div className="mt-5 flex flex-wrap gap-2.5">

@@ -56,8 +56,12 @@ export function ContactContent() {
 
           return (
             <div key={item.label} data-contact-detail className="rounded-[18px] border border-[var(--border)] bg-[var(--surface)] p-4 shadow-[0_16px_44px_var(--shadow-color)]">
-              <Icon aria-hidden="true" className="size-4 text-[var(--purple)]" />
-              <p className="mt-3 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--text-muted)]">{item.label}</p>
+              <div className="flex min-w-0 items-center gap-2.5">
+                <span className="grid size-9 shrink-0 place-items-center rounded-[12px] border border-purple-300/20 bg-purple-500/10 text-[var(--purple)]">
+                  <Icon aria-hidden="true" className="size-4" />
+                </span>
+                <p className="min-w-0 text-[10px] font-bold uppercase tracking-[0.16em] text-[var(--text-muted)]">{item.label}</p>
+              </div>
               <p className="mt-1 text-sm font-semibold leading-5 text-[var(--text)]">{item.value}</p>
             </div>
           );

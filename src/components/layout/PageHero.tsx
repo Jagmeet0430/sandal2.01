@@ -8,7 +8,7 @@ type PageHeroProps = {
 
 export function PageHero({ eyebrow, title, description }: PageHeroProps) {
   return (
-    <section className="relative flex min-h-screen items-center px-5 pb-20 pt-32 text-[#12101a] dark:text-white">
+    <section data-scroll-anchor className="relative flex min-h-screen items-center px-5 pb-20 pt-32 text-[var(--foreground)]">
       <div className="mx-auto w-full max-w-[1380px]">
         <div className="mx-auto max-w-[980px] text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-purple-300">
@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, title, description }: PageHeroProps) {
             {title}
           </h1>
 
-          <p className="mx-auto mt-7 max-w-[680px] text-base leading-8 text-[#625d6f] dark:text-white/50 sm:text-lg">
+          <p className="mx-auto mt-7 max-w-[680px] text-base leading-8 text-[var(--text-secondary)] sm:text-lg">
             {description}
           </p>
         </div>

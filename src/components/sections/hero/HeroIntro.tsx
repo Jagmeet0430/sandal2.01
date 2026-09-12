@@ -57,7 +57,7 @@ export function HeroIntro({ content = defaultHomeContent.hero }: HeroIntroProps)
   }, [prefersReducedMotion]);
 
   return (
-    <div data-hero-state="intro-content" className="relative flex h-full items-center px-5 pt-24">
+    <div data-hero-state="intro-content" className="relative flex h-full items-start px-5 pt-[calc(var(--header-height)+3.25rem)] md:items-center md:pt-24">
       <div className="hero-intro-glow hero-orb-drift absolute left-1/2 top-[73%] h-[360px] w-[860px] -translate-x-1/2 rounded-[50%] blur-[112px]" />
       <div data-intro-centerpiece className="hero-centerpiece-float pointer-events-auto absolute left-1/2 top-[55%] z-0 h-[min(55vw,520px)] w-[min(55vw,520px)] -translate-x-1/2 -translate-y-1/2 opacity-70 md:top-[56%]">
         {useStaticVisual ? (
