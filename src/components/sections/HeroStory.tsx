@@ -236,9 +236,17 @@ export function HeroStory({ content = defaultHomeContent }: HeroStoryProps) {
           duration: 0.85,
         }, 2.15);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();
@@ -274,11 +282,17 @@ export function HeroStory({ content = defaultHomeContent }: HeroStoryProps) {
           <HeroIntro content={content.hero} />
         </div>
 
-        <div ref={createRef} className="absolute inset-0">
+        <div
+          ref={createRef}
+          className="pointer-events-none invisible absolute inset-0 opacity-0"
+        >
           <HeroCreate content={content.whatWeCreate} />
         </div>
 
-        <div ref={aboutRef} className="absolute inset-0">
+        <div
+          ref={aboutRef}
+          className="pointer-events-none invisible absolute inset-0 opacity-0"
+        >
           <HeroAbout content={content.about} />
         </div>
       </div>

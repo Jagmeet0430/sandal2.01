@@ -32,7 +32,7 @@ export function TechnologyContent() {
 
       <div data-technology-content="cta" className="mt-9">
         <Link
-          href="#contact"
+          href="/contact"
           className="inline-flex text-[11px] font-bold uppercase tracking-[0.22em] text-[var(--text-secondary)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/58 dark:hover:text-purple-200"
         >
           Discuss your technology needs -&gt;

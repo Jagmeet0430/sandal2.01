@@ -10,28 +10,31 @@ export type TechnologyCategory = {
 
 export const technologyContent = {
   eyebrow: "TECHNOLOGY",
-  heading: "Technology chosen for real-world reliability",
+  heading: "Modern stack chosen for reliability, security, and scale",
   description:
-    "We select tools, platforms, and infrastructure according to the actual needs of the product, including performance, security, integration, maintainability, and future scale.",
+    "Alyvora selects practical technologies for each product, including Next.js, React, TypeScript, PostgreSQL, Prisma, Node.js, FastAPI, OpenAI, Anthropic, vector databases, AWS, Docker, and Vercel.",
   cta: "Explore our technology approach",
   points: [
-    "Product-focused architecture",
-    "Secure cloud infrastructure",
-    "AI and data systems",
-    "Reliable integration layers",
+    "Next.js, React, TypeScript, and Tailwind CSS",
+    "PostgreSQL, Prisma, APIs, and backend services",
+    "OpenAI, Anthropic, RAG, vector search, and AI agents",
+    "Vercel, AWS, Docker, CI/CD, CDN, and security monitoring",
   ],
-  detail: "AI / APPLICATIONS / CLOUD",
+  detail: "AI / SOFTWARE / CLOUD",
 };
 
 export const technologyLabels: TechnologyLabel[] = [
   { name: "OpenAI", group: "model" },
+  { name: "Anthropic", group: "model" },
   { name: "Python", group: "model" },
   { name: "React", group: "api" },
   { name: "Next.js", group: "api" },
   { name: "PostgreSQL", group: "data" },
+  { name: "Prisma", group: "data" },
   { name: "AWS", group: "cloud" },
+  { name: "Vercel", group: "cloud" },
   { name: "Node.js", group: "api" },
-  { name: "Cloud Infrastructure", group: "cloud" },
+  { name: "FastAPI", group: "api" },
   { name: "Vector Search", group: "data" },
   { name: "APIs", group: "security" },
 ];
@@ -39,14 +42,14 @@ export const technologyLabels: TechnologyLabel[] = [
 export const technologyCategories: TechnologyCategory[] = [
   {
     title: "Artificial Intelligence",
-    description: "Generative AI, retrieval systems, intelligent agents, and machine learning.",
+    description: "OpenAI, Anthropic, RAG, vector databases, intelligent agents, analytics, and secure AI integrations.",
   },
   {
     title: "Modern Applications",
-    description: "Scalable applications built with current web and backend technologies.",
+    description: "Next.js, React, TypeScript, Tailwind CSS, Node.js, FastAPI, APIs, dashboards, portals, and mobile-ready experiences.",
   },
   {
     title: "Cloud Infrastructure",
-    description: "Secure deployment, monitoring, storage, integration, and platform reliability.",
+    description: "Vercel, AWS, Docker, GitHub Actions, PostgreSQL, file storage, CDN, monitoring, and platform reliability.",
   },
 ];

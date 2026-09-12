@@ -7,23 +7,28 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
   metadataBase: siteUrl ? new URL(siteUrl) : undefined,
-  applicationName: "ApexMind",
+  applicationName: "Alyvora AI Technologies",
   title: {
-    default: "ApexMind | AI Products, Automation and Digital Platforms",
-    template: "%s | ApexMind",
+    default: "Alyvora AI Technologies | Intelligent Technology. Real Business Impact.",
+    template: "%s | Alyvora AI Technologies",
   },
   description:
-    "ApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.",
+    "Alyvora AI Technologies builds AI solutions, custom software, automation systems, web and mobile applications, and secure cloud platforms for businesses in India and worldwide.",
   keywords: [
     "AI development",
+    "Alyvora AI Technologies",
+    "custom software development",
     "web application development",
+    "mobile application development",
     "cloud solutions",
     "digital product development",
     "workflow automation",
+    "RAG systems",
+    "AI agents",
   ],
-  authors: [{ name: "ApexMind" }],
-  creator: "ApexMind",
-  publisher: "ApexMind",
+  authors: [{ name: "Alyvora AI Technologies Private Limited" }],
+  creator: "Alyvora AI Technologies Private Limited",
+  publisher: "Alyvora AI Technologies Private Limited",
   category: "Technology",
   alternates: siteUrl
     ? {
@@ -38,26 +43,26 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "ApexMind",
-    title: "ApexMind | AI Products, Automation and Digital Platforms",
+    siteName: "Alyvora AI Technologies",
+    title: "Alyvora AI Technologies | Intelligent Technology. Real Business Impact.",
     description:
-      "ApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.",
+      "AI, custom software, automation, cloud platforms, and digital transformation services for startups, SMEs, institutions, clinics, retailers, and growing companies.",
     images: siteUrl
       ? [
           {
             url: "/images/apexmind-social-preview.svg",
             width: 1200,
             height: 630,
-            alt: "ApexMind AI-ready enterprise platform preview",
+            alt: "Alyvora AI Technologies intelligent platform preview",
           },
         ]
       : undefined,
   },
   twitter: {
     card: "summary_large_image",
-    title: "ApexMind | AI Products, Automation and Digital Platforms",
+    title: "Alyvora AI Technologies | Intelligent Technology. Real Business Impact.",
     description:
-      "ApexMind builds intelligent applications, automation systems, cloud platforms, and digital products for modern businesses.",
+      "AI, custom software, automation, cloud platforms, and digital transformation services for modern businesses.",
     images: siteUrl ? ["/images/apexmind-social-preview.svg"] : undefined,
   },
   robots: {

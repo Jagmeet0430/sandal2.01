@@ -211,8 +211,8 @@ export function ContactForm() {
 
             <p>
               You can also contact us directly at{" "}
-              <a href="mailto:hello@apexmind.ai" className="font-bold text-violet-700 hover:text-violet-950 dark:text-blue-200 dark:hover:text-white">
-                hello@apexmind.ai
+              <a href="mailto:hello@alyvora.ai" className="font-bold text-violet-700 hover:text-violet-950 dark:text-blue-200 dark:hover:text-white">
+                hello@alyvora.ai
               </a>
             </p>
           </div>

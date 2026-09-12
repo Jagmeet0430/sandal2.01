@@ -101,9 +101,17 @@ export function AutomationSection() {
           duration: 0.32,
         }, 0.9);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();

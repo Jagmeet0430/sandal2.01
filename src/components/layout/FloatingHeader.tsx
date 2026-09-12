@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, type MouseEvent, useCallback, useEffect, useState } from "react";
+import { type CSSProperties, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,11 +9,29 @@ import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { primaryNavigation } from "@/data/navigation";
 
 const headerOffset = 100;
+const homeHref = "/";
+const routeActiveMap: Record<string, string> = {
+  "/": homeHref,
+  "/capabilities": "/capabilities",
+  "/process": "/process",
+  "/technology": "/technology",
+  "/work": "/work",
+  "/contact": "/contact",
+};
+
+const sectionNavigation = [
+  { href: homeHref, id: "home" },
+  { href: "/capabilities", id: "capabilities" },
+  { href: "/process", id: "process" },
+  { href: "/technology", id: "technology" },
+  { href: "/work", id: "work" },
+  { href: "/contact", id: "contact" },
+];
 
 export function FloatingHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [activeHref, setActiveHref] = useState(primaryNavigation[0]?.href ?? "/");
+  const [activeHref, setActiveHref] = useState(primaryNavigation[0]?.href ?? homeHref);
   const [frostProgress, setFrostProgress] = useState(0);
 
   useEffect(() => {
@@ -58,12 +76,7 @@ export function FloatingHeader() {
   }, [isOpen]);
 
   useEffect(() => {
-    const routeHref =
-      primaryNavigation.find((item) => item.href === pathname)?.href ??
-      primaryNavigation[0]?.href ??
-      "/";
-
-    setActiveHref(routeHref);
+    setActiveHref(routeActiveMap[pathname] ?? primaryNavigation[0]?.href ?? homeHref);
   }, [pathname]);
 
   useEffect(() => {
@@ -72,21 +85,12 @@ export function FloatingHeader() {
     }
 
     let frame = 0;
-    const homeSections = [
-      { href: "/", id: "home" },
-      { href: "/capabilities", id: "capabilities" },
-      { href: "/process", id: "process" },
-      { href: "/technology", id: "technology" },
-      { href: "/work", id: "work" },
-      { href: "/contact", id: "contact" },
-    ];
-
     const updateActiveSection = () => {
       frame = 0;
       const anchorY = headerOffset + window.innerHeight * 0.34;
-      let nextActive = "/";
+      let nextActive = homeHref;
 
-      homeSections.forEach((item) => {
+      sectionNavigation.forEach((item) => {
         const section = document.getElementById(item.id);
 
         if (!section) {
@@ -115,9 +119,17 @@ export function FloatingHeader() {
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
     window.addEventListener("hashchange", requestUpdate);
-    document.fonts?.ready.then(requestUpdate);
+    let isMounted = true;
+
+    document.fonts?.ready.then(() => {
+      if (isMounted) {
+        requestUpdate();
+      }
+    });
 
     return () => {
+      isMounted = false;
+
       if (frame) {
         window.cancelAnimationFrame(frame);
       }
@@ -127,33 +139,6 @@ export function FloatingHeader() {
       window.removeEventListener("hashchange", requestUpdate);
     };
   }, [pathname]);
-
-  const handleSectionClick = useCallback((event: MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith("#")) {
-      setIsOpen(false);
-      return;
-    }
-
-    const target = document.getElementById(href.slice(1));
-
-    if (!target) {
-      return;
-    }
-
-    event.preventDefault();
-    setIsOpen(false);
-    setActiveHref(href);
-
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const top = target.getBoundingClientRect().top + window.scrollY - headerOffset;
-
-    window.scrollTo({
-      top: Math.max(0, top),
-      behavior: prefersReducedMotion ? "auto" : "smooth",
-    });
-
-    window.history.pushState(null, "", href);
-  }, []);
 
   const headerStyle = {
     "--header-frost-progress": frostProgress.toFixed(3),
@@ -168,12 +153,12 @@ export function FloatingHeader() {
         <Link
           href="/"
           className="flex shrink-0 items-center gap-2.5"
-          aria-label="ApexMind home"
+          aria-label="Alyvora home"
           onClick={() => setIsOpen(false)}
         >
           <Image src="/logos/apexmind-mark.svg" alt="" width={31} height={31} priority />
           <span className="text-[21px] font-extrabold tracking-normal text-[var(--text-primary)]">
-            ApexMind
+            Alyvora
           </span>
         </Link>
 
@@ -186,7 +171,7 @@ export function FloatingHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={isActive ? "location" : undefined}
-                onClick={(event) => handleSectionClick(event, item.href)}
+                onClick={() => setIsOpen(false)}
                 className={[
                   "group relative overflow-hidden rounded-full border px-[19px] py-[10px] text-[13px] font-semibold leading-none",
                   "border-transparent transition-[background-color,border-color,color,box-shadow] duration-200 ease-out",
@@ -215,10 +200,10 @@ export function FloatingHeader() {
           <div className="text-right">
             <p className="text-[11px] leading-4 text-[var(--text-muted)]">Talk to our experts</p>
             <a
-              href="mailto:hello@apexmind.ai"
+              href="mailto:hello@alyvora.ai"
               className="text-[13px] font-bold leading-5 text-[var(--text-secondary)] transition hover:text-[var(--accent)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
             >
-              hello@apexmind.ai
+              hello@alyvora.ai
             </a>
           </div>
 
@@ -227,7 +212,7 @@ export function FloatingHeader() {
             onClick={() => setIsOpen(false)}
             className="inline-flex h-10 origin-center items-center justify-center rounded-[14px] border border-purple-300/25 bg-gradient-to-b from-[var(--ds-primary)] to-[#5b16c9] px-5 text-[12px] font-bold text-white shadow-button transition-[transform,box-shadow,background-color] duration-200 ease-out hover:scale-[1.03] hover:shadow-card-glow hover:from-[var(--ds-primary-hover)] hover:to-[var(--ds-primary)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300"
           >
-            Start a Conversation
+            Start Your Project
           </Link>
         </div>
 
@@ -256,7 +241,7 @@ export function FloatingHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={activeHref === item.href ? "location" : undefined}
-                onClick={(event) => handleSectionClick(event, item.href)}
+                onClick={() => setIsOpen(false)}
                 className={[
                   "group relative overflow-hidden rounded-2xl border px-4 py-3 text-lg font-bold",
                   "transition-[background-color,border-color,color] duration-200 ease-out",
@@ -282,15 +267,15 @@ export function FloatingHeader() {
               <ThemeToggle />
             </div>
             <p className="text-xs text-[var(--text-muted)]">Talk to our experts</p>
-            <a href="mailto:hello@apexmind.ai" className="mt-1 block text-sm font-bold text-[var(--text-primary)]">
-              hello@apexmind.ai
+            <a href="mailto:hello@alyvora.ai" className="mt-1 block text-sm font-bold text-[var(--text-primary)]">
+              hello@alyvora.ai
             </a>
             <Link
               href="/contact"
               onClick={() => setIsOpen(false)}
               className="mt-4 inline-flex h-11 w-full origin-center items-center justify-center rounded-[14px] bg-gradient-to-b from-[var(--ds-primary)] to-[#5b16c9] text-sm font-bold text-white shadow-button transition-[transform,box-shadow,background-color] duration-200 ease-out hover:scale-[1.03] hover:shadow-card-glow hover:from-[var(--ds-primary-hover)] hover:to-[var(--ds-primary)]"
             >
-              Start a Conversation
+              Start Your Project
             </Link>
           </div>
       </div>

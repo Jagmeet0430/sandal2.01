@@ -1,12 +1,30 @@
 import { NextResponse } from "next/server";
 
 const allowedServices = new Set([
-  "AI Product",
-  "Automation",
-  "Cloud Platform",
-  "Digital Product",
-  "Strategy",
+  "AI & Automation Solutions",
+  "Custom Software Development",
+  "Web & Mobile Application Development",
+  "Cloud & DevOps",
+  "AI Consulting",
+  "Digital Transformation",
+  "MVP Development",
   "Not sure yet",
+]);
+
+const allowedBudgets = new Set([
+  "Under INR 80,000",
+  "INR 80,000 - INR 2,00,000",
+  "INR 2,00,000 - INR 6,00,000",
+  "INR 6,00,000+",
+  "To be discussed",
+]);
+
+const allowedTimelines = new Set([
+  "Immediately",
+  "2-4 weeks",
+  "1-3 months",
+  "3+ months",
+  "To be discussed",
 ]);
 
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
@@ -17,7 +35,10 @@ type ContactRequest = {
   name?: string;
   email?: string;
   company?: string;
+  phone?: string;
   service?: string;
+  budget?: string;
+  timeline?: string;
   details?: string;
   message?: string;
   website?: string;
@@ -92,11 +113,22 @@ export async function POST(request: Request) {
       name: sanitize(data.name, 120),
       email: sanitize(data.email, 180).toLowerCase(),
       company: sanitize(data.company, 160),
+      phone: sanitize(data.phone, 40),
       service: sanitize(data.service, 80),
+      budget: sanitize(data.budget, 80),
+      timeline: sanitize(data.timeline, 80),
       details: sanitize(data.details || data.message, 1600),
     };
 
-    if (payload.name.length < 2 || !payload.email || !payload.service || payload.details.length < 20) {
+    if (
+      payload.name.length < 2 ||
+      !payload.email ||
+      payload.phone.length < 7 ||
+      !payload.service ||
+      !payload.budget ||
+      !payload.timeline ||
+      payload.details.length < 20
+    ) {
       return NextResponse.json(
         {
           success: false,
@@ -125,6 +157,30 @@ export async function POST(request: Request) {
         {
           success: false,
           message: "Please select a valid service.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    if (!allowedBudgets.has(payload.budget)) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Please select a valid budget.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    if (!allowedTimelines.has(payload.timeline)) {
+      return NextResponse.json(
+        {
+          success: false,
+          message: "Please select a valid timeline.",
         },
         {
           status: 400,

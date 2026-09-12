@@ -1,4 +1,5 @@
 import { impactContent } from "@/data/impact";
+import Link from "next/link";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export function ImpactContent() {
@@ -40,7 +41,7 @@ export function ImpactContent() {
 
       <div data-impact-content="ctas" className="mt-7 flex flex-wrap justify-center gap-3">
         {impactContent.ctas.map((cta, index) => (
-          <a
+          <Link
             key={cta.href}
             data-impact-cta
             href={cta.href}
@@ -52,7 +53,7 @@ export function ImpactContent() {
             ].join(" ")}
           >
             {cta.label}
-          </a>
+          </Link>
         ))}
       </div>
     </div>

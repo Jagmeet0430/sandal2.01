@@ -2,24 +2,24 @@
   "page": "home",
   "draft": {
     "hero": {
-      "eyebrow": "AI-POWERED DIGITAL INTELLIGENCE",
-      "heading": "Intelligence built for",
-      "highlightedHeading": "what comes next",
-      "paragraph": "ApexMind creates intelligent applications, automation systems, and digital platforms for businesses ready to move beyond ordinary software.",
-      "ctaLabel": "Scroll to explore",
-      "ctaLink": "#capabilities"
+      "eyebrow": "ALYVORA AI TECHNOLOGIES",
+      "heading": "Intelligent Technology.",
+      "highlightedHeading": "Real Business Impact.",
+      "paragraph": "Alyvora AI Technologies Private Limited builds AI solutions, custom software, automation systems, web and mobile applications, cloud platforms, and digital transformation programs for businesses ready to scale.",
+      "ctaLabel": "Start Your Project",
+      "ctaLink": "/contact"
     },
     "whatWeCreate": {
-      "eyebrow": "WHAT WE CREATE",
-      "heading": "Intelligent technology for",
-      "highlightedHeading": "complex business challenges",
+      "eyebrow": "SERVICES",
+      "heading": "Secure, scalable technology for",
+      "highlightedHeading": "real business workflows",
       "cards": [
         {
           "id": "ai-products",
           "number": "01",
-          "category": "AI PRODUCTS",
-          "title": "Intelligent applications built around real workflows",
-          "description": "AI products designed around operational needs.",
+          "category": "AI & AUTOMATION",
+          "title": "AI assistants, RAG systems, agents, and workflow automation",
+          "description": "Custom AI solutions and automations designed around operational needs.",
           "ctaLabel": "Explore",
           "ctaUrl": "/capabilities",
           "order": 1
@@ -27,9 +27,9 @@
         {
           "id": "automation",
           "number": "02",
-          "category": "AUTOMATION",
-          "title": "Connected systems that remove repetitive work",
-          "description": "Workflow automation for teams and tools.",
+          "category": "CUSTOM SOFTWARE",
+          "title": "CRM, ERP, POS, SaaS, dashboards, portals, and APIs",
+          "description": "Business software built for reliability, security, and long-term growth.",
           "ctaLabel": "Explore",
           "ctaUrl": "/contact",
           "order": 2
@@ -37,9 +37,9 @@
         {
           "id": "digital-platforms",
           "number": "03",
-          "category": "DIGITAL PLATFORMS",
-          "title": "Scalable cloud products designed for long-term growth",
-          "description": "Cloud platforms with product-grade foundations.",
+          "category": "WEB & MOBILE",
+          "title": "Corporate websites, custom apps, e-commerce, PWAs, and mobile apps",
+          "description": "Responsive product experiences for customers, students, teams, and partners.",
           "ctaLabel": "Explore",
           "ctaUrl": "/technology",
           "order": 3
@@ -47,29 +47,29 @@
       ]
     },
     "about": {
-      "eyebrow": "ABOUT APEXMIND",
-      "heading": "We turn emerging technology into practical systems.",
-      "paragraph": "ApexMind combines strategy, engineering, and artificial intelligence to build products that solve operational problems, improve customer experiences, and support long-term growth.",
+      "eyebrow": "ABOUT ALYVORA",
+      "heading": "We transform ideas and operations through intelligent, reliable technology.",
+      "paragraph": "Alyvora helps startups, SMEs, educational institutions, healthcare providers, retailers, professional service companies, and international teams build secure, scalable, user-friendly digital systems.",
       "pillars": [
         {
           "id": "strategy",
           "number": "01",
-          "title": "Strategy",
-          "description": "We identify the right product direction before writing code.",
+          "title": "Mission",
+          "description": "Help businesses turn ideas and operations into dependable intelligent systems.",
           "order": 1
         },
         {
           "id": "engineering",
           "number": "02",
           "title": "Engineering",
-          "description": "We build secure, scalable systems designed for real operations.",
+          "description": "Build secure, scalable software with clean architecture and practical delivery discipline.",
           "order": 2
         },
         {
           "id": "intelligence",
           "number": "03",
-          "title": "Intelligence",
-          "description": "We add AI where it creates measurable business value.",
+          "title": "Vision",
+          "description": "Become a globally trusted AI and software technology company solving meaningful business problems.",
           "order": 3
         }
       ]
@@ -77,24 +77,24 @@
   },
   "published": {
     "hero": {
-      "eyebrow": "AI-POWERED DIGITAL INTELLIGENCE",
-      "heading": "Intelligence built for",
-      "highlightedHeading": "what comes next",
-      "paragraph": "ApexMind creates intelligent applications, automation systems, and digital platforms for businesses ready to move beyond ordinary software.",
-      "ctaLabel": "Scroll to explore",
-      "ctaLink": "#capabilities"
+      "eyebrow": "ALYVORA AI TECHNOLOGIES",
+      "heading": "Intelligent Technology.",
+      "highlightedHeading": "Real Business Impact.",
+      "paragraph": "Alyvora AI Technologies Private Limited builds AI solutions, custom software, automation systems, web and mobile applications, cloud platforms, and digital transformation programs for businesses ready to scale.",
+      "ctaLabel": "Start Your Project",
+      "ctaLink": "/contact"
     },
     "whatWeCreate": {
-      "eyebrow": "WHAT WE CREATE",
-      "heading": "Intelligent technology for",
-      "highlightedHeading": "complex business challenges",
+      "eyebrow": "SERVICES",
+      "heading": "Secure, scalable technology for",
+      "highlightedHeading": "real business workflows",
       "cards": [
         {
           "id": "ai-products",
           "number": "01",
-          "category": "AI PRODUCTS",
-          "title": "Intelligent applications built around real workflows",
-          "description": "AI products designed around operational needs.",
+          "category": "AI & AUTOMATION",
+          "title": "AI assistants, RAG systems, agents, and workflow automation",
+          "description": "Custom AI solutions and automations designed around operational needs.",
           "ctaLabel": "Explore",
           "ctaUrl": "/capabilities",
           "order": 1
@@ -102,9 +102,9 @@
         {
           "id": "automation",
           "number": "02",
-          "category": "AUTOMATION",
-          "title": "Connected systems that remove repetitive work",
-          "description": "Workflow automation for teams and tools.",
+          "category": "CUSTOM SOFTWARE",
+          "title": "CRM, ERP, POS, SaaS, dashboards, portals, and APIs",
+          "description": "Business software built for reliability, security, and long-term growth.",
           "ctaLabel": "Explore",
           "ctaUrl": "/contact",
           "order": 2
@@ -112,9 +112,9 @@
         {
           "id": "digital-platforms",
           "number": "03",
-          "category": "DIGITAL PLATFORMS",
-          "title": "Scalable cloud products designed for long-term growth",
-          "description": "Cloud platforms with product-grade foundations.",
+          "category": "WEB & MOBILE",
+          "title": "Corporate websites, custom apps, e-commerce, PWAs, and mobile apps",
+          "description": "Responsive product experiences for customers, students, teams, and partners.",
           "ctaLabel": "Explore",
           "ctaUrl": "/technology",
           "order": 3
@@ -122,29 +122,29 @@
       ]
     },
     "about": {
-      "eyebrow": "ABOUT APEXMIND",
-      "heading": "We turn emerging technology into practical systems.",
-      "paragraph": "ApexMind combines strategy, engineering, and artificial intelligence to build products that solve operational problems, improve customer experiences, and support long-term growth.",
+      "eyebrow": "ABOUT ALYVORA",
+      "heading": "We transform ideas and operations through intelligent, reliable technology.",
+      "paragraph": "Alyvora helps startups, SMEs, educational institutions, healthcare providers, retailers, professional service companies, and international teams build secure, scalable, user-friendly digital systems.",
       "pillars": [
         {
           "id": "strategy",
           "number": "01",
-          "title": "Strategy",
-          "description": "We identify the right product direction before writing code.",
+          "title": "Mission",
+          "description": "Help businesses turn ideas and operations into dependable intelligent systems.",
           "order": 1
         },
         {
           "id": "engineering",
           "number": "02",
           "title": "Engineering",
-          "description": "We build secure, scalable systems designed for real operations.",
+          "description": "Build secure, scalable software with clean architecture and practical delivery discipline.",
           "order": 2
         },
         {
           "id": "intelligence",
           "number": "03",
-          "title": "Intelligence",
-          "description": "We add AI where it creates measurable business value.",
+          "title": "Vision",
+          "description": "Become a globally trusted AI and software technology company solving meaningful business problems.",
           "order": 3
         }
       ]
@@ -165,9 +165,9 @@
           "eyebrow": "AI-POWERED DIGITAL INTELLIGENCE",
           "heading": "Intelligence built for",
           "highlightedHeading": "what comes next",
-          "paragraph": "ApexMind creates intelligent applications, automation systems, and digital platforms for businesses ready to move beyond ordinary software.",
+          "paragraph": "Alyvora AI Technologies Private Limited builds AI solutions, custom software, automation systems, web and mobile applications, cloud platforms, and digital transformation programs for businesses ready to scale.",
           "ctaLabel": "Scroll to explore",
-          "ctaLink": "#capabilities"
+          "ctaLink": "/capabilities"
         },
         "whatWeCreate": {
           "eyebrow": "WHAT WE CREATE",
@@ -209,7 +209,7 @@
         "about": {
           "eyebrow": "ABOUT APEXMIND",
           "heading": "We turn emerging technology into practical systems.",
-          "paragraph": "ApexMind combines strategy, engineering, and artificial intelligence to build products that solve operational problems, improve customer experiences, and support long-term growth.",
+          "paragraph": "Alyvora helps startups, SMEs, educational institutions, healthcare providers, retailers, professional service companies, and international teams build secure, scalable, user-friendly digital systems.",
           "pillars": [
             {
               "id": "strategy",

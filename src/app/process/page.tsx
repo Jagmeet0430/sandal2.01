@@ -1,8 +1,13 @@
 import { PageHero } from "@/components/layout/PageHero";
+import { FloatingHeader } from "@/components/layout/FloatingHeader";
+import { Footer } from "@/components/layout/Footer";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { DeliveryProcessSection } from "@/components/sections/DeliveryProcessSection";
 
 export default function ProcessPage() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="bg-[var(--background)] text-[var(--foreground)]">
+      <FloatingHeader />
       <PageHero
         eyebrow="Our process"
         title={
@@ -13,8 +18,11 @@ export default function ProcessPage() {
             </span>
           </>
         }
-        description="A focused process for understanding, designing, building, testing, and scaling intelligent digital products."
+        description="A focused process for discovery, UI/UX, architecture, development, testing, security review, deployment, and long-term improvement."
       />
+      <DeliveryProcessSection />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }

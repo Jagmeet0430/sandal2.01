@@ -14,9 +14,9 @@ import { setWebGLActiveScene, setWebGLProgress } from "@/store/webgl-state";
 
 const visualMap: Record<CapabilityId, React.ComponentType> = {
   "ai-products": AIProductsVisual,
-  "cloud-platforms": CloudPlatformsVisual,
+  "custom-software": CloudPlatformsVisual,
   automation: AutomationVisual,
-  "digital-intelligence": DigitalIntelligenceVisual,
+  "web-mobile": DigitalIntelligenceVisual,
 };
 
 const labelPositions = [0, 1.1, 2.2, 3.3];
@@ -174,9 +174,9 @@ export function CapabilitiesStory() {
 
       timeline
         .addLabel("ai-products", labelPositions[0])
-        .addLabel("cloud-platforms", labelPositions[1])
+        .addLabel("custom-software", labelPositions[1])
         .addLabel("automation", labelPositions[2])
-        .addLabel("digital-intelligence", labelPositions[3]);
+        .addLabel("web-mobile", labelPositions[3]);
 
       function activateProgress(index: number, at: number) {
         timeline
@@ -289,9 +289,17 @@ export function CapabilitiesStory() {
         duration: 0.9,
       }, 3.3);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();

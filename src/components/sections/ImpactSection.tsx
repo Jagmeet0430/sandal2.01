@@ -116,9 +116,17 @@ export function ImpactSection() {
         .to(sphere, { scale: 1.035, y: -12, duration: 0.3, ease: "none" }, 0.78)
         .to([primary, copy, benefits, ctas], { autoAlpha: 1, duration: 0.15 }, 0.9);
 
+      let isMounted = true;
+
       document.fonts?.ready.then(() => {
-        ScrollTrigger.refresh();
+        if (isMounted) {
+          ScrollTrigger.refresh();
+        }
       });
+
+      return () => {
+        isMounted = false;
+      };
     }, section);
 
     return () => ctx.revert();

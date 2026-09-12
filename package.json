@@ -1,8 +1,8 @@
 {
-  "name": "apexmind-ai-website",
+  "name": "alyvora-ai-website",
   "version": "1.0.0",
   "private": true,
-  "description": "Premium technology-company website foundation built with Next.js.",
+  "description": "Alyvora AI Technologies company website built with Next.js.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

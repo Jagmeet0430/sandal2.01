@@ -3,7 +3,7 @@ import { AdminShell } from "@/components/admin/AdminShell";
 
 export const metadata: Metadata = {
   title: "Admin Panel",
-  description: "ApexMind enterprise operating dashboard.",
+  description: "Alyvora enterprise operating dashboard.",
   robots: {
     index: false,
     follow: false,

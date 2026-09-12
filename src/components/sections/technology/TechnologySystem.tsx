@@ -50,7 +50,7 @@ export function TechnologySystem() {
         data-technology-core
         className="absolute left-1/2 top-[42%] z-30 w-[154px] -translate-x-1/2 -translate-y-1/2 rounded-[24px] border border-[#14111B]/10 bg-white/82 px-6 py-5 text-center shadow-[0_0_72px_rgba(139,61,255,0.22),0_22px_70px_rgba(36,24,54,0.12)] backdrop-blur-xl dark:border-white/10 dark:bg-black/38 dark:shadow-[0_0_80px_rgba(139,61,255,0.26)]"
       >
-        <p className="text-lg font-bold text-[#14111B] dark:text-white/70">ApexMind</p>
+        <p className="text-lg font-bold text-[#14111B] dark:text-white/70">Alyvora</p>
         <p className="mt-3 text-[9px] font-semibold uppercase tracking-[0.22em] text-[#7C3AED]/70 dark:text-purple-200/48">
           Intelligence Hub
         </p>

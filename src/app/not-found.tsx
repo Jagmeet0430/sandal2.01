@@ -5,7 +5,7 @@ import { Button } from "@/components/common/Button";
 
 export const metadata: Metadata = {
   title: "Page Not Found",
-  description: "The ApexMind page you requested could not be found.",
+  description: "The Alyvora page you requested could not be found.",
   robots: {
     index: false,
     follow: true,
@@ -22,7 +22,7 @@ export default function NotFound() {
             This page is not available.
           </h1>
           <p className="mt-5 max-w-xl text-base leading-7 text-theme-secondary">
-            The page may have moved, or the link may no longer point to an active ApexMind resource.
+            The page may have moved, or the link may no longer point to an active Alyvora resource.
           </p>
           <Button href="/" icon={ArrowRight} size="lg" className="mt-8">
             Return home
