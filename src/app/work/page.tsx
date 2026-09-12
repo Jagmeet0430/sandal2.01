@@ -84,10 +84,12 @@ export default function WorkPage() {
 
               return (
                 <article key={item.title} className="rounded-[22px] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_58px_var(--shadow-color)]">
-                  <div className="grid size-10 place-items-center rounded-[14px] border border-purple-300/20 bg-purple-500/10 text-purple-200">
-                    <Icon aria-hidden="true" className="size-5" />
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-[14px] border border-purple-300/20 bg-purple-500/10 text-purple-200">
+                      <Icon aria-hidden="true" className="size-5" />
+                    </span>
+                    <h2 className="min-w-0 text-2xl font-semibold tracking-normal text-[var(--text)]">{item.title}</h2>
                   </div>
-                  <h2 className="mt-5 text-2xl font-semibold tracking-normal text-[var(--text)]">{item.title}</h2>
                   <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">{item.description}</p>
                 </article>
               );

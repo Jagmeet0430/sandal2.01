@@ -57,8 +57,12 @@ export function BusinessImpactSection() {
             <div className="grid gap-4 sm:grid-cols-3">
               {impactContent.benefits.map((benefit) => (
                 <article key={benefit.title} className="rounded-[20px] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_58px_var(--shadow-color)]">
-                  <Target aria-hidden="true" className="size-5 text-[var(--purple)]" />
-                  <h3 className="mt-4 text-lg font-semibold tracking-normal text-[var(--text)]">{benefit.title}</h3>
+                  <div className="flex min-w-0 items-center gap-3">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-[13px] border border-purple-300/20 bg-purple-500/10 text-[var(--purple)]">
+                      <Target aria-hidden="true" className="size-5" />
+                    </span>
+                    <h3 className="min-w-0 text-lg font-semibold tracking-normal text-[var(--text)]">{benefit.title}</h3>
+                  </div>
                   <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">{benefit.description}</p>
                 </article>
               ))}

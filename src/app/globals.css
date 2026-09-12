@@ -124,6 +124,9 @@
   --ds-section-padding-y: 6rem;
   --ds-card-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
   --ds-card-glow: 0 0 52px var(--ds-primary-glow);
+  --header-height: 96px;
+  --site-header-height: var(--header-height);
+  --site-header-scroll-offset: var(--header-height);
 }
 
 .light {
@@ -215,10 +218,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: var(--header-height);
   text-rendering: optimizeLegibility;
   background: var(--page-bg);
   overflow-x: hidden;
+}
+
+:where([id], section, footer, [data-scroll-anchor], h1, h2, h3, h4, label, li, article, [data-contact-form-field]) {
+  scroll-margin-top: var(--header-height);
 }
 
 body {

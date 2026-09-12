@@ -1,6 +1,6 @@
 "use client";
 
-import { type CSSProperties, useEffect, useState } from "react";
+import { type CSSProperties, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -8,7 +8,6 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/common/ThemeToggle";
 import { primaryNavigation } from "@/data/navigation";
 
-const headerOffset = 100;
 const homeHref = "/";
 const routeActiveMap: Record<string, string> = {
   "/": homeHref,
@@ -30,9 +29,58 @@ const sectionNavigation = [
 
 export function FloatingHeader() {
   const pathname = usePathname();
+  const headerRef = useRef<HTMLElement>(null);
+  const headerShellRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [activeHref, setActiveHref] = useState(primaryNavigation[0]?.href ?? homeHref);
   const [frostProgress, setFrostProgress] = useState(0);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const header = headerRef.current;
+    const headerShell = headerShellRef.current;
+
+    if (!header || !headerShell) {
+      return undefined;
+    }
+
+    let frame = 0;
+
+    const measureHeader = () => {
+      frame = 0;
+      const headerBottom = header.getBoundingClientRect().bottom;
+
+      root.style.setProperty("--header-height", `${Math.ceil(headerBottom)}px`);
+      root.style.setProperty("--site-header-height", `${Math.ceil(headerBottom)}px`);
+      root.style.setProperty("--site-header-scroll-offset", `${Math.ceil(headerBottom)}px`);
+    };
+
+    const requestMeasure = () => {
+      if (frame) {
+        return;
+      }
+
+      frame = window.requestAnimationFrame(measureHeader);
+    };
+
+    const resizeObserver = new ResizeObserver(requestMeasure);
+
+    resizeObserver.observe(header);
+    resizeObserver.observe(headerShell);
+    requestMeasure();
+    window.addEventListener("resize", requestMeasure);
+    window.addEventListener("orientationchange", requestMeasure);
+
+    return () => {
+      if (frame) {
+        window.cancelAnimationFrame(frame);
+      }
+
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", requestMeasure);
+      window.removeEventListener("orientationchange", requestMeasure);
+    };
+  }, []);
 
   useEffect(() => {
     let frame = 0;
@@ -87,7 +135,10 @@ export function FloatingHeader() {
     let frame = 0;
     const updateActiveSection = () => {
       frame = 0;
-      const anchorY = headerOffset + window.innerHeight * 0.34;
+      const measuredHeaderOffset = Number.parseFloat(
+        window.getComputedStyle(document.documentElement).getPropertyValue("--site-header-scroll-offset"),
+      ) || 0;
+      const anchorY = measuredHeaderOffset + window.innerHeight * 0.34;
       let nextActive = homeHref;
 
       sectionNavigation.forEach((item) => {
@@ -145,14 +196,15 @@ export function FloatingHeader() {
   } as CSSProperties;
 
   return (
-    <header className="fixed inset-x-0 top-[18px] z-50 px-4">
+    <header ref={headerRef} className="fixed inset-x-0 top-[18px] z-[80] px-4">
       <div
+        ref={headerShellRef}
         style={headerStyle}
         className="floating-header-shell mx-auto flex h-[64px] w-full max-w-[min(1320px,calc(100vw-2rem))] items-center justify-between rounded-full border px-5 transition-[background-color,border-color,box-shadow,backdrop-filter] duration-200 ease-out sm:px-7 lg:px-8"
       >
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2.5"
+          className="flex min-h-11 shrink-0 items-center gap-2.5"
           aria-label="Alyvora home"
           onClick={() => setIsOpen(false)}
         >
@@ -267,7 +319,7 @@ export function FloatingHeader() {
               <ThemeToggle />
             </div>
             <p className="text-xs text-[var(--text-muted)]">Talk to our experts</p>
-            <a href="mailto:hello@alyvora.ai" className="mt-1 block text-sm font-bold text-[var(--text-primary)]">
+            <a href="mailto:hello@alyvora.ai" className="mt-1 flex min-h-11 items-center text-sm font-bold text-[var(--text-primary)]">
               hello@alyvora.ai
             </a>
             <Link

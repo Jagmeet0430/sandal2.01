@@ -63,11 +63,11 @@ export function ServicesOverview() {
 
             return (
               <article key={service.title} className="rounded-[22px] border border-[var(--border)] bg-[var(--surface)] p-5 shadow-[0_18px_58px_var(--shadow-color)]">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="grid size-11 place-items-center rounded-[14px] border border-purple-300/20 bg-purple-500/10 text-purple-200">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div className="grid size-11 shrink-0 place-items-center rounded-[14px] border border-purple-300/20 bg-purple-500/10 text-purple-200">
                     <Icon aria-hidden="true" className="size-5" />
                   </div>
-                  <span className="rounded-full border border-[var(--border)] bg-[var(--surface-elevated)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--purple)]">
+                  <span className="shrink-0 rounded-full border border-[var(--border)] bg-[var(--surface-elevated)] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-[var(--purple)]">
                     Build
                   </span>
                 </div>

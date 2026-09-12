@@ -16,7 +16,7 @@ export function ThemeToggle() {
     return (
       <div
         aria-hidden="true"
-        className="h-10 w-[116px] shrink-0 rounded-full border border-[var(--border-color)] bg-[var(--surface)]"
+        className="h-11 w-[116px] shrink-0 rounded-full border border-[var(--border-color)] bg-[var(--surface)]"
       />
     );
   }
@@ -31,7 +31,7 @@ export function ThemeToggle() {
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className="
-        group relative flex h-10 w-[116px] shrink-0 items-center
+        group relative flex h-11 w-[116px] shrink-0 items-center
         rounded-full border border-[var(--border-color)]
         bg-[var(--surface)] p-1
         text-[var(--text-primary)]
@@ -50,18 +50,18 @@ export function ThemeToggle() {
 
       <span
         className={[
-          "absolute left-1 grid size-8 place-items-center rounded-full",
+          "absolute left-1 grid size-9 place-items-center rounded-full",
           "shadow-[0_8px_25px_rgba(0,0,0,0.22)]",
           "transition-[transform,background-color,color] duration-200 ease-out",
           isDark
-            ? "translate-x-[74px] bg-purple-600 text-white"
+            ? "translate-x-[72px] bg-purple-600 text-white"
             : "translate-x-0 bg-white text-amber-500",
         ].join(" ")}
       >
         {isDark ? <Moon className="size-4" /> : <Sun className="size-4" />}
       </span>
 
-      <span className="ml-9 mr-8 flex-1 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--text-secondary)] transition-colors duration-200 ease-out group-hover:text-[var(--text-primary)]">
+      <span className="ml-10 mr-8 flex-1 text-center text-[11px] font-bold uppercase tracking-[0.12em] text-[var(--text-secondary)] transition-colors duration-200 ease-out group-hover:text-[var(--text-primary)]">
         {isDark ? "Dark" : "Light"}
       </span>
     </button>

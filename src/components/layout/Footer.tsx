@@ -32,7 +32,7 @@ const footerColumns = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[var(--background)] px-5 text-[var(--foreground)]">
+    <footer id="footer" className="relative overflow-hidden bg-[var(--background)] px-5 text-[var(--foreground)]">
       <div aria-hidden="true" className="absolute inset-x-[12%] bottom-[-220px] h-[320px] rounded-[50%] bg-purple-700/[0.08] blur-[110px] dark:bg-purple-700/18 dark:blur-[120px]" />
       <div aria-hidden="true" className="absolute -right-28 top-16 h-72 w-72 rounded-full border border-purple-200/8" />
       <div aria-hidden="true" className="absolute -right-12 top-28 h-44 w-44 rounded-full border border-purple-200/8" />
@@ -41,7 +41,7 @@ export function Footer() {
       <div className="relative mx-auto max-w-[1240px] py-16 sm:py-20 lg:py-24">
         <div className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div data-footer-reveal>
-            <Link href="/" className="inline-flex items-center gap-3" aria-label="Alyvora home">
+            <Link href="/" className="inline-flex min-h-11 items-center gap-3" aria-label="Alyvora home">
               <Image src="/logos/apexmind-mark.svg" alt="" width={36} height={36} />
               <div>
                 <p className="text-2xl font-extrabold text-[var(--text)] dark:text-white">Alyvora</p>
@@ -59,7 +59,7 @@ export function Footer() {
 
             <a
               href="mailto:hello@alyvora.ai"
-              className="mt-7 inline-flex text-sm font-semibold text-[var(--text)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/72 dark:hover:text-purple-200"
+              className="mt-7 inline-flex min-h-11 items-center text-sm font-semibold text-[var(--text)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/72 dark:hover:text-purple-200"
             >
               hello@alyvora.ai
             </a>
@@ -80,7 +80,7 @@ export function Footer() {
                     <li key={`${column.title}-${link.label}`}>
                       <Link
                         href={link.href}
-                        className="text-sm text-[var(--text-secondary)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/50 dark:hover:text-purple-200"
+                        className="inline-flex min-h-11 min-w-11 items-center text-sm text-[var(--text-secondary)] transition hover:text-[var(--purple)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-300 dark:text-white/50 dark:hover:text-purple-200"
                       >
                         {link.label}
                       </Link>
@@ -97,11 +97,11 @@ export function Footer() {
           className="mt-14 flex flex-col gap-4 border-t border-[var(--border-color)] pt-7 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:text-white/38"
         >
           <p>&copy; {new Date().getFullYear()} Alyvora AI Technologies Private Limited. All rights reserved.</p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2">
-            <Link href="/contact" className="transition hover:text-purple-200">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <Link href="/contact" className="inline-flex min-h-11 min-w-11 items-center transition hover:text-purple-200">
               Privacy
             </Link>
-            <Link href="/contact" className="transition hover:text-purple-200">
+            <Link href="/contact" className="inline-flex min-h-11 min-w-11 items-center transition hover:text-purple-200">
               Terms
             </Link>
             <span>Intelligent Technology. Real Business Impact.</span>

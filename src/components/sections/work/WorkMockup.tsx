@@ -13,17 +13,35 @@ export function WorkMockup() {
   return (
     <div
       data-work-mockup
-      className="relative mx-auto min-h-[390px] w-full max-w-[560px] overflow-visible lg:min-h-[430px]"
+      className="relative mx-auto w-full max-w-[560px] overflow-visible md:min-h-[390px] lg:min-h-[430px]"
       aria-hidden="true"
     >
+      <div className="relative z-10 rounded-[22px] border border-white/10 bg-[#0D0B13]/96 p-5 shadow-[0_24px_70px_rgba(0,0,0,0.36),inset_0_0_32px_rgba(139,61,255,0.055)] md:hidden">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C4A7FF]">Alyvora Platform</p>
+            <p className="mt-1 text-sm text-[#A8A0B2]">Case study operating layer</p>
+          </div>
+          <span className="inline-flex shrink-0 items-center rounded-full border border-emerald-300/20 bg-emerald-300/[0.06] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.12em] text-emerald-200">
+            92% ready
+          </span>
+        </div>
+        <p className="mt-5 text-xl font-semibold leading-snug text-[#F7F4FB]">
+          Captures project enquiries, qualifies intent, and routes the right next step.
+        </p>
+        <p className="mt-3 text-sm leading-6 text-[#A8A0B2]">
+          AI support, portfolio CMS, and lead workflow in one practical operating layer.
+        </p>
+      </div>
+
       <div
         data-work-glow
-        className="absolute left-1/2 top-1/2 h-[230px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[#7C3AED]/14 blur-[70px]"
+        className="absolute left-1/2 top-1/2 hidden h-[230px] w-[330px] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-[#7C3AED]/14 blur-[70px] md:block"
       />
 
       <div
         data-work-layer="main"
-        className="relative z-10 mx-auto rounded-[24px] border border-white/10 bg-[#0D0B13]/96 p-4 shadow-[0_28px_86px_rgba(0,0,0,0.42),inset_0_0_36px_rgba(139,61,255,0.055)] backdrop-blur-2xl sm:p-5 lg:absolute lg:left-1/2 lg:top-1/2 lg:w-[520px] lg:-translate-x-1/2 lg:-translate-y-1/2"
+        className="relative z-10 mx-auto hidden rounded-[24px] border border-white/10 bg-[#0D0B13]/96 p-4 shadow-[0_28px_86px_rgba(0,0,0,0.42),inset_0_0_36px_rgba(139,61,255,0.055)] backdrop-blur-2xl md:block sm:p-5 lg:absolute lg:left-1/2 lg:top-1/2 lg:w-[520px] lg:-translate-x-1/2 lg:-translate-y-1/2"
       >
         <div className="flex items-start justify-between gap-4 border-b border-white/10 pb-4">
           <div>
@@ -85,7 +103,7 @@ export function WorkMockup() {
 
       <div
         data-work-layer="insight"
-        className="relative z-20 mt-4 rounded-[18px] border border-white/10 bg-[linear-gradient(135deg,#15111D,rgba(18,16,25,0.95))] p-4 shadow-[0_18px_56px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:absolute sm:right-0 sm:top-2 sm:mt-0 sm:w-[218px]"
+        className="relative z-20 mt-4 hidden rounded-[18px] border border-white/10 bg-[linear-gradient(135deg,#15111D,rgba(18,16,25,0.95))] p-4 shadow-[0_18px_56px_rgba(0,0,0,0.34)] backdrop-blur-xl md:block sm:absolute sm:right-0 sm:top-2 sm:mt-0 sm:w-[218px]"
       >
         <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C4A7FF]">AI INSIGHT</p>
         <p className="mt-3 text-xs leading-6 text-[#D8D0E4]">
@@ -95,7 +113,7 @@ export function WorkMockup() {
 
       <div
         data-work-layer="activity"
-        className="relative z-[18] mt-4 rounded-[18px] border border-white/10 bg-[#121019]/96 p-4 shadow-[0_18px_56px_rgba(0,0,0,0.34)] backdrop-blur-xl sm:absolute sm:bottom-2 sm:left-2 sm:mt-0 sm:w-[230px]"
+        className="relative z-[18] mt-4 hidden rounded-[18px] border border-white/10 bg-[#121019]/96 p-4 shadow-[0_18px_56px_rgba(0,0,0,0.34)] backdrop-blur-xl md:block sm:absolute sm:bottom-2 sm:left-2 sm:mt-0 sm:w-[230px]"
       >
         <div className="flex items-center gap-3">
           <div className="grid size-10 place-items-center rounded-full border border-emerald-300/20 bg-emerald-300/[0.06] text-emerald-200">

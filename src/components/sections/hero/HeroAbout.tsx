@@ -15,7 +15,7 @@ export function HeroAbout({ content = defaultHomeContent.about }: HeroAboutProps
   const revealDistance = prefersReducedMotion ? 0 : 22;
 
   return (
-    <div data-hero-state="about-content" className="relative flex h-full items-center px-5 pt-24 md:pt-32">
+    <div data-hero-state="about-content" className="relative flex h-full items-start px-5 pt-[calc(var(--header-height)+2.75rem)] md:items-center md:pt-32">
       <div className="absolute right-[-12%] top-[20%] h-[460px] w-[460px] rounded-full bg-[var(--purple)]/[0.10] blur-[130px] dark:bg-[var(--purple)]/14" />
 
       <div className="relative mx-auto grid w-full max-w-[1420px] items-center gap-12 lg:grid-cols-[0.42fr_0.58fr] lg:gap-12 xl:gap-16">
